@@ -119,7 +119,7 @@ $( document ).ready(function() {
 $( document ).ready(function() {
   $( ".thing1" ).change(function() {
     $( ".thing1 option:selected" ).each(function() {
-      if ($( this ).val() == 'bnode') {
+      if ($( this ).val() === 'bnode') {
         $( '.iri-thing1' ).attr('disabled', 'disabled');
       } else {
         $( '.iri-thing1' ).removeAttr('disabled');

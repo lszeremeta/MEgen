@@ -73,7 +73,7 @@ $count = isset($_GET['count']) ? $_GET['count'] : 2;
 $( document ).ready(function() {
   $( ".thing<?php echo $count; ?>" ).change(function() {
     $( ".thing<?php echo $count; ?> option:selected" ).each(function() {
-      if ($( this ).val() == 'bnode') {
+      if ($( this ).val() === 'bnode') {
         $( ".iri-thing<?php echo $count; ?>" ).attr('disabled', 'disabled');
       } else {
         $( ".iri-thing<?php echo $count; ?>" ).removeAttr('disabled');
