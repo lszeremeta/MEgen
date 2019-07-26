@@ -109,7 +109,6 @@ $( document ).ready(function() {
         url: "next.php?count="+i
     })
     .done(function( msg ) {
-alert(msg);
         var j = i - 1;
         $( "#m"+j ).after( msg );
         i = i + 1;
