@@ -97,28 +97,28 @@ microdata;
 
         $doc = $doc . "    <div itemscope itemtype='http://schema.org/MolecularEntity' itemid='$subject1'>";
         if ($identifier1 != '') {
-            $doc = $doc . "\n      <div>identifier: <span itemprop='identifier'>$identifier1</span></div>";
+            $doc = $doc . "\n      <div itemprop='identifier'>$identifier1</div>";
         }
         if ($name1 != '') {
-            $doc = $doc . "\n      <div>name: <span itemprop='name'>$name1</span></div>";
+            $doc = $doc . "\n      <div itemprop='name'>$name1</div>";
         }
         if ($inchikey1 != '') {
-            $doc = $doc . "\n      <div>inChIKey: <span itemprop='inChIKey'>$inchikey1</span></div>";
+            $doc = $doc . "\n      <div itemprop='inChIKey'>$inchikey1</div>";
         }
         if ($inchi1 != '') {
-            $doc = $doc . "\n      <div>inChI: <span itemprop='inChI'>$inchi1</span></div>";
+            $doc = $doc . "\n      <div itemprop='inChI'>$inchi1</div>";
         }
         if ($smiles1 != '') {
-            $doc = $doc . "\n      <div>SMILES: <span itemprop='smiles'>$smiles1</span></div>";
+            $doc = $doc . "\n      <div itemprop='smiles'>$smiles1</div>";
         }
         if ($url1 != '') {
             $doc = $doc . "\n      <a href='$url1' itemprop='url'>$url1</a>";
         }
         if ($iupacname1 != '') {
-            $doc = $doc . "\n      <div>iupacName: <span itemprop='iupacName'>$iupacname1</span></div>";
+            $doc = $doc . "\n      <div itemprop='iupacName'>$iupacname1</div>";
         }
         if ($molecularformula1 != '') {
-            $doc = $doc . "\n      <div>molecularFormula: <span itemprop='molecularFormula'>$molecularformula1</span></div>";
+            $doc = $doc . "\n      <div itemprop='molecularFormula'>$molecularformula1</div>";
         }
 
         $doc = $doc . "\n    </div>\n";
