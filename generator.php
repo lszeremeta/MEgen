@@ -22,7 +22,7 @@
             </div>
           </div>
           <div class="form-group row">
-            <label class="col-sm-2 col-form-label iri-thing1">Subject IRI</label>
+            <label class="col-sm-2 col-form-label">Subject IRI</label>
             <div class="col-sm-10">
               <input class="form-control iri-thing1" type="url" placeholder="IRI here..." name="iri-1">
             </div>
@@ -109,12 +109,24 @@ $( document ).ready(function() {
         url: "next.php?count="+i
     })
     .done(function( msg ) {
+alert(msg);
         var j = i - 1;
         $( "#m"+j ).after( msg );
         i = i + 1;
-        //alert(msg);
     });
   })
+});
+
+$( document ).ready(function() {
+  $( ".thing1" ).change(function() {
+    $( ".thing1 option:selected" ).each(function() {
+      if ($( this ).val() == 'bnode') {
+        $( '.iri-thing1' ).attr('disabled', 'disabled');
+      } else {
+        $( '.iri-thing1' ).removeAttr('disabled');
+      }
+    });
+  });
 });
 </script>
   </body>

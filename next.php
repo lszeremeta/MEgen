@@ -6,16 +6,16 @@ $count = isset($_GET['count']) ? $_GET['count'] : 2;
           <div class="form-group row">
             <label class="col-sm-2 col-form-label">Identify things</label>
             <div class="col-sm-10">
-              <select class="form-control form-control-sm thing1" name="name-thing-<?php echo $count; ?>">
+              <select class="form-control form-control-sm thing<?php echo $count; ?>" name="name-thing-<?php echo $count; ?>">
                 <option id="iri-<?php echo $count; ?>" selected="selected" value="iri">IRI</option>
                 <option id="bnode-<?php echo $count; ?>" value="bnode">Blank node</option>
               </select>
             </div>
           </div>
           <div class="form-group row">
-            <label class="col-sm-2 col-form-label iri-thing1">Subject IRI</label>
+            <label class="col-sm-2 col-form-label">Subject IRI</label>
             <div class="col-sm-10">
-              <input class="form-control iri-thing1" type="url" placeholder="IRI here..." name="iri-<?php echo $count; ?>">
+              <input class="form-control iri-thing<?php echo $count; ?>" type="url" placeholder="IRI here..." name="iri-<?php echo $count; ?>">
             </div>
           </div>
           <div class="form-group row">
@@ -69,3 +69,17 @@ $count = isset($_GET['count']) ? $_GET['count'] : 2;
         </div>
       </div>
       <div id="next-<?php echo $count; ?>"></div>
+<script>
+$( document ).ready(function() {
+  $( ".thing<?php echo $count; ?>" ).change(function() {
+    $( ".thing<?php echo $count; ?> option:selected" ).each(function() {
+      if ($( this ).val() == 'bnode') {
+        $( ".iri-thing<?php echo $count; ?>" ).attr('disabled', 'disabled');
+      } else {
+        $( ".iri-thing<?php echo $count; ?>" ).removeAttr('disabled');
+      }
+    });
+  });
+});
+</script>
+
