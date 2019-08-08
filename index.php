@@ -96,6 +96,7 @@
             <label class="col-sm-2 col-form-label">Output</label>
             <div class="col-sm-10">
                 <select class="form-control form-control-sm" readonly="readonly" name="output-format">
+                    <option>JSON-LD</option>
                     <option>RDFa</option>
                     <option>Microdata</option>
                 </select>
