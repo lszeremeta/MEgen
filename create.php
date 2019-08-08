@@ -30,6 +30,7 @@ rdfa;
         $url1 = isset($_POST["url-$i"]) ? htmlspecialchars($_POST["url-$i"]) : '';
         $iupacname1 = isset($_POST["iupac-name-$i"]) ? htmlspecialchars($_POST["iupac-name-$i"]) : '';
         $molecularformula1 = isset($_POST["molecular-formula-$i"]) ? htmlspecialchars($_POST["molecular-formula-$i"]) : '';
+        $description1 = isset($_POST["description-$i"]) ? htmlspecialchars($_POST["description-$i"]) : '';
 
         $doc = $doc . "    <div typeof='schema:MolecularEntity' about='$subject1'>";
         if ($identifier1 != '') {
@@ -55,6 +56,9 @@ rdfa;
         }
         if ($molecularformula1 != '') {
             $doc = $doc . "\n      <div property='schema:molecularFormula'>$molecularformula1</div>";
+        }
+        if ($description1 != '') {
+            $doc = $doc . "\n      <div property='schema:description'>$description1</div>";
         }
 
         $doc = $doc . "\n    </div>\n";
@@ -86,14 +90,15 @@ microdata;
         if ($subject1 == '') {
             $subject1 = '_:' . uniqid();
         }
-        $identifier1 = isset($_POST["identifier-$i"]) ? $_POST["identifier-$i"] : '';
-        $name1 = isset($_POST["name-$i"]) ? $_POST["name-$i"] : '';
-        $inchikey1 = isset($_POST["inchikey-$i"]) ? $_POST["inchikey-$i"] : '';
-        $inchi1 = isset($_POST["inchi-$i"]) ? $_POST["inchi-$i"] : '';
-        $smiles1 = isset($_POST["smiles-$i"]) ? $_POST["smiles-$i"] : '';
-        $url1 = isset($_POST["url-$i"]) ? $_POST["url-$i"] : '';
-        $iupacname1 = isset($_POST["iupac-name-$i"]) ? $_POST["iupac-name-$i"] : '';
-        $molecularformula1 = isset($_POST["molecular-formula-$i"]) ? $_POST["molecular-formula-$i"] : '';
+        $identifier1 = isset($_POST["identifier-$i"]) ? htmlspecialchars($_POST["identifier-$i"]) : '';
+        $name1 = isset($_POST["name-$i"]) ? htmlspecialchars($_POST["name-$i"]) : '';
+        $inchikey1 = isset($_POST["inchikey-$i"]) ? htmlspecialchars($_POST["inchikey-$i"]) : '';
+        $inchi1 = isset($_POST["inchi-$i"]) ? htmlspecialchars($_POST["inchi-$i"]) : '';
+        $smiles1 = isset($_POST["smiles-$i"]) ? htmlspecialchars($_POST["smiles-$i"]) : '';
+        $url1 = isset($_POST["url-$i"]) ? htmlspecialchars($_POST["url-$i"]) : '';
+        $iupacname1 = isset($_POST["iupac-name-$i"]) ? htmlspecialchars($_POST["iupac-name-$i"]) : '';
+        $molecularformula1 = isset($_POST["molecular-formula-$i"]) ? htmlspecialchars($_POST["molecular-formula-$i"]) : '';
+        $description1 = isset($_POST["description-$i"]) ? htmlspecialchars($_POST["description-$i"]) : '';
 
         $doc = $doc . "    <div itemscope itemtype='http://schema.org/MolecularEntity' itemid='$subject1'>";
         if ($identifier1 != '') {
@@ -120,6 +125,9 @@ microdata;
         if ($molecularformula1 != '') {
             $doc = $doc . "\n      <div itemprop='molecularFormula'>$molecularformula1</div>";
         }
+        if ($description1 != '') {
+            $doc = $doc . "\n      <div itemprop='description'>$description1</div>";
+        }
 
         $doc = $doc . "\n    </div>\n";
     }
@@ -129,6 +137,17 @@ microdata;
 }
 
 $format = $_POST['output-format'];
+
+$identifier1 = isset($_POST["identifier-$i"]) ? htmlspecialchars($_POST["identifier-$i"]) : '';
+$name1 = isset($_POST["name-$i"]) ? htmlspecialchars($_POST["name-$i"]) : '';
+$inchikey1 = isset($_POST["inchikey-$i"]) ? htmlspecialchars($_POST["inchikey-$i"]) : '';
+$inchi1 = isset($_POST["inchi-$i"]) ? htmlspecialchars($_POST["inchi-$i"]) : '';
+$smiles1 = isset($_POST["smiles-$i"]) ? htmlspecialchars($_POST["smiles-$i"]) : '';
+$url1 = isset($_POST["url-$i"]) ? htmlspecialchars($_POST["url-$i"]) : '';
+$iupacname1 = isset($_POST["iupac-name-$i"]) ? htmlspecialchars($_POST["iupac-name-$i"]) : '';
+$molecularformula1 = isset($_POST["molecular-formula-$i"]) ? htmlspecialchars($_POST["molecular-formula-$i"]) : '';
+$description1 = isset($_POST["description-$i"]) ? htmlspecialchars($_POST["description-$i"]) : '';
+
 if ($format === "RDFa") {
     $doc = createRDFaOutput();
 } elseif ($format === "Microdata") {
