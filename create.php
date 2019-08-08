@@ -22,14 +22,14 @@ rdfa;
         if ($subject1 == '') {
             $subject1 = '_:' . uniqid();
         }
-        $identifier1 = isset($_POST["identifier-$i"]) ? $_POST["identifier-$i"] : '';
-        $name1 = isset($_POST["name-$i"]) ? $_POST["name-$i"] : '';
-        $inchikey1 = isset($_POST["inchikey-$i"]) ? $_POST["inchikey-$i"] : '';
-        $inchi1 = isset($_POST["inchi-$i"]) ? $_POST["inchi-$i"] : '';
-        $smiles1 = isset($_POST["smiles-$i"]) ? $_POST["smiles-$i"] : '';
-        $url1 = isset($_POST["url-$i"]) ? $_POST["url-$i"] : '';
-        $iupacname1 = isset($_POST["iupac-name-$i"]) ? $_POST["iupac-name-$i"] : '';
-        $molecularformula1 = isset($_POST["molecular-formula-$i"]) ? $_POST["molecular-formula-$i"] : '';
+        $identifier1 = isset($_POST["identifier-$i"]) ? htmlspecialchars($_POST["identifier-$i"]) : '';
+        $name1 = isset($_POST["name-$i"]) ? htmlspecialchars($_POST["name-$i"]) : '';
+        $inchikey1 = isset($_POST["inchikey-$i"]) ? htmlspecialchars($_POST["inchikey-$i"]) : '';
+        $inchi1 = isset($_POST["inchi-$i"]) ? htmlspecialchars($_POST["inchi-$i"]) : '';
+        $smiles1 = isset($_POST["smiles-$i"]) ? htmlspecialchars($_POST["smiles-$i"]) : '';
+        $url1 = isset($_POST["url-$i"]) ? htmlspecialchars($_POST["url-$i"]) : '';
+        $iupacname1 = isset($_POST["iupac-name-$i"]) ? htmlspecialchars($_POST["iupac-name-$i"]) : '';
+        $molecularformula1 = isset($_POST["molecular-formula-$i"]) ? htmlspecialchars($_POST["molecular-formula-$i"]) : '';
 
         $doc = $doc . "    <div typeof='schema:MolecularEntity' about='$subject1'>";
         if ($identifier1 != '') {
