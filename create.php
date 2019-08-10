@@ -63,8 +63,6 @@ jsonld;
         $doc = $doc . "  },";
     }
     $doc = substr($doc, 0, -1);
-    header('Content-type: application/ld+json');
-    header('Content-Disposition: attachment; filename="document.jsonld"');
 
     $doc = $doc . <<<jsonld
  ],
@@ -169,8 +167,6 @@ rdfa;
 
         $doc = $doc . "\n    </div>\n";
     }
-    header('Content-type: text/turtle');
-    header('Content-Disposition: attachment; filename="document.html"');
     return $doc . "\n  </body>\n</html>";
 }
 
@@ -237,19 +233,40 @@ microdata;
 
         $doc = $doc . "\n    </div>\n";
     }
-    header('Content-type: text/html');
-    header('Content-Disposition: attachment; filename="document.html"');
     return $doc . "\n  </body>\n</html>";
 }
 
 $format = $_POST['output-format'];
 
-if ($format === "JSON-LD") {
+if ($format === "JSON-LD with HTML") {
+    $doc = <<<jsonld_html_start
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Example Document</title>
+    <script type="application/ld+json">
+
+jsonld_html_start;
+
+    $doc = $doc . createJSONLDOutput() . <<<jsonld_html_end
+    </script>
+  </head>
+</html>
+jsonld_html_end;
+    header('Content-type: text/html');
+    header('Content-Disposition: attachment; filename="document.html"');
+} elseif ($format === "JSON-LD") {
     $doc = createJSONLDOutput();
+    header('Content-type: application/ld+json');
+    header('Content-Disposition: attachment; filename="document.jsonld"');
 } elseif ($format === "RDFa") {
     $doc = createRDFaOutput();
+    header('Content-type: text/html');
+    header('Content-Disposition: attachment; filename="document.html"');
 } elseif ($format === "Microdata") {
     $doc = createMicrodataOutput();
+    header('Content-type: text/html');
+    header('Content-Disposition: attachment; filename="document.html"');
 }
 
 echo $doc;
