@@ -77,10 +77,60 @@
                 </div>
             </div>
             <div class="form-group row">
+                <label class="col-sm-2 col-form-label">molecularWeight</label>
+                <div class="col-sm-10">
+                    <input class="form-control" type="text" placeholder="molecularWeight here (e.g. 0.01 mg)..."
+                           name="molecular-weight-1">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">monoisotopicMolecularWeight</label>
+                <div class="col-sm-10">
+                    <input class="form-control" type="text"
+                           placeholder="monoisotopicMolecularWeight here (e.g. 0.01 mg)..."
+                           name="monoisotopic-molecular-weight-1">
+                </div>
+            </div>
+            <div class="form-group row">
                 <label class="col-sm-2 col-form-label">description</label>
                 <div class="col-sm-10">
                     <input class="form-control" type="text" placeholder="description here..."
                            name="description-1">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">disambiguatingDescription</label>
+                <div class="col-sm-10">
+                    <input class="form-control" type="text" placeholder="disambiguatingDescription here..."
+                           name="disambiguating-description-1">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">image</label>
+                <div class="col-sm-10">
+                    <input class="form-control" type="url" placeholder="image URL here..."
+                           name="image-1">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">additionalType</label>
+                <div class="col-sm-10">
+                    <input class="form-control" type="url" placeholder="additionalType URL here..."
+                           name="additional-type-1">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">alternateName</label>
+                <div class="col-sm-10">
+                    <input class="form-control" type="text" placeholder="alternateName here..."
+                           name="alternate-name-1">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">sameAs</label>
+                <div class="col-sm-10">
+                    <input class="form-control" type="url" placeholder="sameAs URL here..."
+                           name="same-as-1">
                 </div>
             </div>
         </div>

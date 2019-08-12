@@ -26,7 +26,14 @@ jsonld;
         $url1 = isset($_POST["url-$i"]) ? $_POST["url-$i"] : '';
         $iupacname1 = isset($_POST["iupac-name-$i"]) ? $_POST["iupac-name-$i"] : '';
         $molecularformula1 = isset($_POST["molecular-formula-$i"]) ? $_POST["molecular-formula-$i"] : '';
+        $molecularweight1 = isset($_POST["molecular-weight-$i"]) ? $_POST["molecular-weight-$i"] : '';
+        $monoisotopicmolecularweight1 = isset($_POST["monoisotopic-molecular-weight-$i"]) ? $_POST["monoisotopic-molecular-weight-$i"] : '';
         $description1 = isset($_POST["description-$i"]) ? $_POST["description-$i"] : '';
+        $disambiguatingdescription1 = isset($_POST["disambiguating-description-$i"]) ? $_POST["disambiguating-description-$i"] : '';
+        $image1 = isset($_POST["image-$i"]) ? $_POST["image-$i"] : '';
+        $additionaltype1 = isset($_POST["additional-type-$i"]) ? $_POST["additional-type-$i"] : '';
+        $alternatename1 = isset($_POST["alternate-name-$i"]) ? $_POST["alternate-name-$i"] : '';
+        $sameas1 = isset($_POST["same-as-$i"]) ? $_POST["same-as-$i"] : '';
 
         $doc = $doc . "  {";
         $doc = $doc . "\n  \"@id\" : \"$subject1\",";
@@ -55,8 +62,29 @@ jsonld;
         if ($molecularformula1 != '') {
             $doc = $doc . "\n  \"molecularFormula\" : \"$molecularformula1\",";
         }
+        if ($molecularweight1 != '') {
+            $doc = $doc . "\n  \"molecularWeight\" : \"$molecularweight1\",";
+        }
+        if ($monoisotopicmolecularweight1 != '') {
+            $doc = $doc . "\n  \"monoisotopicMolecularWeight\" : \"$monoisotopicmolecularweight1\",";
+        }
         if ($description1 != '') {
             $doc = $doc . "\n  \"description\" : \"$description1\",";
+        }
+        if ($disambiguatingdescription1 != '') {
+            $doc = $doc . "\n  \"disambiguatingDescription\" : \"$disambiguatingdescription1\",";
+        }
+        if ($image1 != '') {
+            $doc = $doc . "\n  \"image\" : \"$image1\",";
+        }
+        if ($additionaltype1 != '') {
+            $doc = $doc . "\n  \"additionalType\" : \"$additionaltype1\",";
+        }
+        if ($alternatename1 != '') {
+            $doc = $doc . "\n  \"alternateName\" : \"$alternatename1\",";
+        }
+        if ($sameas1 != '') {
+            $doc = $doc . "\n  \"sameAs\" : \"$sameas1\",";
         }
 
         $doc = substr($doc, 0, -1);
@@ -91,8 +119,29 @@ jsonld;
     "molecularFormula" : {
       "@id" : "https://schema.org/molecularFormula"
     },
+    "molecularWeight" : {
+      "@id" : "https://schema.org/molecularWeight"
+    },
+    "monoisotopicMolecularWeight" : {
+      "@id" : "https://schema.org/monoisotopicMolecularWeight"
+    },
     "description" : {
       "@id" : "https://schema.org/description"
+    },
+    "disambiguatingDescription" : {
+      "@id" : "https://schema.org/disambiguatingDescription"
+    },
+    "image" : {
+      "@id" : "https://schema.org/image"
+    },
+    "additionalType" : {
+      "@id" : "https://schema.org/additionalType"
+    },
+    "alternateName" : {
+      "@id" : "https://schema.org/alternateName"
+    },
+    "sameAs" : {
+      "@id" : "https://schema.org/sameAs"
     },
     "schema" : "https://schema.org/",
     "rdf" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
@@ -134,7 +183,14 @@ rdfa;
         $url1 = isset($_POST["url-$i"]) ? htmlspecialchars($_POST["url-$i"]) : '';
         $iupacname1 = isset($_POST["iupac-name-$i"]) ? htmlspecialchars($_POST["iupac-name-$i"]) : '';
         $molecularformula1 = isset($_POST["molecular-formula-$i"]) ? htmlspecialchars($_POST["molecular-formula-$i"]) : '';
+        $molecularweight1 = isset($_POST["molecular-weight-$i"]) ? htmlspecialchars($_POST["molecular-weight-$i"]) : '';
+        $monoisotopicmolecularweight1 = isset($_POST["monoisotopic-molecular-weight-$i"]) ? htmlspecialchars($_POST["monoisotopic-molecular-weight-$i"]) : '';
         $description1 = isset($_POST["description-$i"]) ? htmlspecialchars($_POST["description-$i"]) : '';
+        $disambiguatingdescription1 = isset($_POST["disambiguating-description-$i"]) ? htmlspecialchars($_POST["disambiguating-description-$i"]) : '';
+        $image1 = isset($_POST["image-$i"]) ? htmlspecialchars($_POST["image-$i"]) : '';
+        $additionaltype1 = isset($_POST["additional-type-$i"]) ? htmlspecialchars($_POST["additional-type-$i"]) : '';
+        $alternatename1 = isset($_POST["alternate-name-$i"]) ? htmlspecialchars($_POST["alternate-name-$i"]) : '';
+        $sameas1 = isset($_POST["same-as-$i"]) ? htmlspecialchars($_POST["same-as-$i"]) : '';
 
         $doc = $doc . "    <div typeof='schema:MolecularEntity' about='$subject1'>";
         if ($identifier1 != '') {
@@ -161,8 +217,29 @@ rdfa;
         if ($molecularformula1 != '') {
             $doc = $doc . "\n      <div property='schema:molecularFormula'>$molecularformula1</div>";
         }
+        if ($molecularweight1 != '') {
+            $doc = $doc . "\n      <div property='schema:molecularWeight'>$molecularweight1</div>";
+        }
+        if ($monoisotopicmolecularweight1 != '') {
+            $doc = $doc . "\n      <div property='schema:monoisotopicMolecularWeight'>$monoisotopicmolecularweight1</div>";
+        }
         if ($description1 != '') {
             $doc = $doc . "\n      <div property='schema:description'>$description1</div>";
+        }
+        if ($disambiguatingdescription1 != '') {
+            $doc = $doc . "\n      <div property='schema:disambiguatingDescription'>$disambiguatingdescription1</div>";
+        }
+        if ($image1 != '') {
+            $doc = $doc . "\n      <a rel='schema:image' href='$image1'>$image1</a>";
+        }
+        if ($additionaltype1 != '') {
+            $doc = $doc . "\n      <a rel='schema:additionalType' href='$additionaltype1'>$additionaltype1</a>";
+        }
+        if ($alternatename1 != '') {
+            $doc = $doc . "\n      <div property='schema:alternateName'>$alternatename1</div>";
+        }
+        if ($sameas1 != '') {
+            $doc = $doc . "\n      <a rel='schema:sameAs' href='$sameas1'>$sameas1</a>";
         }
 
         $doc = $doc . "\n    </div>\n";
@@ -200,7 +277,14 @@ microdata;
         $url1 = isset($_POST["url-$i"]) ? htmlspecialchars($_POST["url-$i"]) : '';
         $iupacname1 = isset($_POST["iupac-name-$i"]) ? htmlspecialchars($_POST["iupac-name-$i"]) : '';
         $molecularformula1 = isset($_POST["molecular-formula-$i"]) ? htmlspecialchars($_POST["molecular-formula-$i"]) : '';
+        $molecularweight1 = isset($_POST["molecular-weight-$i"]) ? htmlspecialchars($_POST["molecular-weight-$i"]) : '';
+        $monoisotopicmolecularweight1 = isset($_POST["monoisotopic-molecular-weight-$i"]) ? htmlspecialchars($_POST["monoisotopic-molecular-weight-$i"]) : '';
         $description1 = isset($_POST["description-$i"]) ? htmlspecialchars($_POST["description-$i"]) : '';
+        $disambiguatingdescription1 = isset($_POST["disambiguating-description-$i"]) ? htmlspecialchars($_POST["disambiguating-description-$i"]) : '';
+        $image1 = isset($_POST["image-$i"]) ? htmlspecialchars($_POST["image-$i"]) : '';
+        $additionaltype1 = isset($_POST["additional-type-$i"]) ? htmlspecialchars($_POST["additional-type-$i"]) : '';
+        $alternatename1 = isset($_POST["alternate-name-$i"]) ? htmlspecialchars($_POST["alternate-name-$i"]) : '';
+        $sameas1 = isset($_POST["same-as-$i"]) ? htmlspecialchars($_POST["same-as-$i"]) : '';
 
         $doc = $doc . "    <div itemscope itemtype='http://schema.org/MolecularEntity' itemid='$subject1'>";
         if ($identifier1 != '') {
@@ -227,8 +311,29 @@ microdata;
         if ($molecularformula1 != '') {
             $doc = $doc . "\n      <div itemprop='molecularFormula'>$molecularformula1</div>";
         }
+        if ($molecularweight1 != '') {
+            $doc = $doc . "\n      <div itemprop='molecularWeight'>$molecularweight1</div>";
+        }
+        if ($monoisotopicmolecularweight1 != '') {
+            $doc = $doc . "\n      <div itemprop='monoisotopicMolecularWeight'>$monoisotopicmolecularweight1</div>";
+        }
         if ($description1 != '') {
             $doc = $doc . "\n      <div itemprop='description'>$description1</div>";
+        }
+        if ($disambiguatingdescription1 != '') {
+            $doc = $doc . "\n      <div itemprop='disambiguatingDescription'>$disambiguatingdescription1</div>";
+        }
+        if ($image1 != '') {
+            $doc = $doc . "\n      <a href='$image1' itemprop='image'>$image1</a>";
+        }
+        if ($additionaltype1 != '') {
+            $doc = $doc . "\n      <a href='$image1' itemprop='additionalType'>$additionaltype1</a>";
+        }
+        if ($alternatename1 != '') {
+            $doc = $doc . "\n      <div itemprop='alternateName'>$alternatename1</div>";
+        }
+        if ($sameas1 != '') {
+            $doc = $doc . "\n      <a href='$sameas1' itemprop='sameAs'>$sameas1</a>";
         }
 
         $doc = $doc . "\n    </div>\n";

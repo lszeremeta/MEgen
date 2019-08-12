@@ -5,9 +5,6 @@ Convenient online form to generate structured data about molecules. MEgen suppor
 ## What are structured data?
 Structured data are additional data placed on websites. They are not visible to ordinary internet users, but can be easily processed by machines. There are 3 formats that we can use to save structured data - [JSON-LD](https://json-ld.org/), [RDFa](http://rdfa.info/) and [Microdata](https://www.w3.org/TR/microdata/). MEgen supports them all and use [MolecularEntitly](https://bioschemas.org/types/MolecularEntity/) type.
 
-## Where to find a CSV file with molecule data?
-There are many possibilities. The easiest way is to download a CSV file from one of the chemical databases, e.g. [DrugBank](https://www.drugbank.ca/releases/latest#open-data). You can also create the CSV file yourself.
-
 ## Contribution
 
 Would you like to improve this project? Great! We are waiting for your help and suggestions. If you are new in open source contributions, read [How to Contribute to Open Source](https://opensource.guide/how-to-contribute/).
