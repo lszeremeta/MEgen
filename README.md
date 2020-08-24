@@ -12,3 +12,10 @@ Would you like to improve this project? Great! We are waiting for your help and 
 ## License
 
 Distributed under [MIT license](https://github.com/domel/MEgen/blob/master/LICENSE).
+
+## See also
+
+These projects can also be useful:
+
+* [SDFEater](https://github.com/lszeremeta/SDFEater) - Always hungry SDF chemical file format parser with many output formats
+* [Molstruct](https://github.com/lszeremeta/molstruct) - Convert chemical molecule data CSV files to structured data formats
