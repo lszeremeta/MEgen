@@ -6,8 +6,33 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <title>Molecular Entity Generator</title>
 </head>
+<style>
+    #logo {
+        display: block;
+        max-width: 90%;
+        margin: auto;
+        margin-bottom: 4%;
+    }
+    body {
+        background-color: #dfdfdf;
+        padding-top: 4%;
+        padding-bottom: 4%;
+    }
+    button, .btn {
+        border-radius: 50px;
+        margin: auto;
+        border: 0;
+    }
+    .btn-primary {
+        background-color: #5bc0be;
+    }
+    .col-form-label {
+    font-weight: 700;
+}
+</style>
 <body>
-<h1 class="text-center">Molecular Entity Generator</h1>
+
+<img id="logo" src="megen.svg" alt="Molecular Entity Generator">
 <form method="post" action="create.php">
     <input type="hidden" value="1" name="count" id="count">
     <div class="card container" id="m1">
