@@ -1,4 +1,4 @@
-# MEgen
+# <img src="https://raw.githubusercontent.com/domel/MEgen/master/logo/megen.png" alt="MEgen logo" width="300">
 
 Convenient online form to generate structured data about molecules. MEgen supports all common structured data formats - [JSON-LD](https://json-ld.org/), [RDFa](http://rdfa.info/) and [Microdata](https://schema.org/docs/gs.html). Written in [PHP](https://www.php.net/). It needs a HTTP server to work (e.g. [Apache](https://httpd.apache.org/) or [NGINX](https://www.nginx.com/)). You can also use [Docker image](https://github.com/lszeremeta/megen-docker) to run app fast and easy.
 

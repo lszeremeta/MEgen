@@ -32,7 +32,7 @@
 </style>
 <body>
 
-<img id="logo" src="megen.svg" alt="Molecular Entity Generator">
+<img id="logo" src="logo/megen.svg" alt="Molecular Entity Generator">
 <form method="post" action="create.php">
     <input type="hidden" value="1" name="count" id="count">
     <div class="card container" id="m1">
