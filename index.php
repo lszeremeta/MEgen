@@ -61,25 +61,25 @@
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label">name</label>
                 <div class="col-sm-10">
-                    <input class="form-control" type="text" placeholder="name here..." name="name-1">
+                    <input class="form-control" type="text" placeholder="name here..." name="name-1" minlength="1">
                 </div>
             </div>
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label">inChIKey</label>
                 <div class="col-sm-10">
-                    <input class="form-control" type="text" placeholder="inChIKey here..." name="inchikey-1">
+                    <input class="form-control" type="text" placeholder="inChIKey here..." name="inchikey-1" maxlength="27" minlength="27">
                 </div>
             </div>
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label">inChI</label>
                 <div class="col-sm-10">
-                    <input class="form-control" type="text" placeholder="inChI here..." name="inchi-1">
+                    <input class="form-control" type="text" placeholder="inChI here..." name="inchi-1" minlength="6">
                 </div>
             </div>
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label">SMILES</label>
                 <div class="col-sm-10">
-                    <input class="form-control" type="text" placeholder="SMILES here..." name="smiles-1">
+                    <input class="form-control" type="text" placeholder="SMILES here..." name="smiles-1" minlength="1">
                 </div>
             </div>
             <div class="form-group row">
@@ -98,7 +98,7 @@
                 <label class="col-sm-2 col-form-label">molecularFormula</label>
                 <div class="col-sm-10">
                     <input class="form-control" type="text" placeholder="molecularFormula here..."
-                           name="molecular-formula-1">
+                           name="molecular-formula-1" pattern="[a-zA-Z0-9]+">
                 </div>
             </div>
             <div class="form-group row">
@@ -120,7 +120,7 @@
                 <label class="col-sm-2 col-form-label">description</label>
                 <div class="col-sm-10">
                     <input class="form-control" type="text" placeholder="description here..."
-                           name="description-1">
+                           name="description-1" minlength="10">
                 </div>
             </div>
             <div class="form-group row">
@@ -148,7 +148,7 @@
                 <label class="col-sm-2 col-form-label">alternateName</label>
                 <div class="col-sm-10">
                     <input class="form-control" type="text" placeholder="alternateName here..."
-                           name="alternate-name-1">
+                           name="alternate-name-1" minlength="1">
                 </div>
             </div>
             <div class="form-group row">
@@ -197,6 +197,7 @@
                     var j = i - 1;
                     $("#m" + j).after(msg);
                     i = i + 1;
+                    console.log("new molecules");
                 });
         })
     });
@@ -206,8 +207,10 @@
             $(".thing1 option:selected").each(function () {
                 if ($(this).val() === 'bnode') {
                     $('.iri-thing1').attr('disabled', 'disabled');
+                    console.log("disable option");
                 } else {
                     $('.iri-thing1').removeAttr('disabled');
+                    console.log("enable option");
                 }
             });
         });
