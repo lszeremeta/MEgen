@@ -55,13 +55,13 @@
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label">identifier</label>
                 <div class="col-sm-10">
-                    <input class="form-control" type="text" placeholder="identifier here..." name="identifier-1">
+                    <input class="form-control" type="text" placeholder="identifier here..." name="identifier-1" required>
                 </div>
             </div>
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label">name</label>
                 <div class="col-sm-10">
-                    <input class="form-control" type="text" placeholder="name here..." name="name-1" minlength="1">
+                    <input class="form-control" type="text" placeholder="name here..." name="name-1" minlength="1" required>
                 </div>
             </div>
             <div class="form-group row">
@@ -85,7 +85,7 @@
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label">url</label>
                 <div class="col-sm-10">
-                    <input class="form-control" type="url" placeholder="url here..." name="url-1">
+                    <input class="form-control" type="url" placeholder="URL here..." name="url-1" required>
                 </div>
             </div>
             <div class="form-group row">
