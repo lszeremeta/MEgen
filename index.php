@@ -61,7 +61,7 @@
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label">name</label>
                 <div class="col-sm-10">
-                    <input class="form-control" type="text" placeholder="name here..." name="name-1" minlength="1" required>
+                    <input class="form-control" type="text" placeholder="name here..." name="name-1" required>
                 </div>
             </div>
             <div class="form-group row">
@@ -79,7 +79,7 @@
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label">SMILES</label>
                 <div class="col-sm-10">
-                    <input class="form-control" type="text" placeholder="SMILES here..." name="smiles-1" minlength="1">
+                    <input class="form-control" type="text" placeholder="SMILES here..." name="smiles-1">
                 </div>
             </div>
             <div class="form-group row">
@@ -148,7 +148,7 @@
                 <label class="col-sm-2 col-form-label">alternateName</label>
                 <div class="col-sm-10">
                     <input class="form-control" type="text" placeholder="alternateName here..."
-                           name="alternate-name-1" minlength="1">
+                           name="alternate-name-1">
                 </div>
             </div>
             <div class="form-group row">
