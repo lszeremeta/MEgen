@@ -1,7 +1,7 @@
 # MEgen Dockerfile
 
 FROM php:7.4-apache
-LABEL maintainer="Łukasz Szeremeta <l.szeremeta.dev@gmail.com>"
+LABEL maintainer="Łukasz Szeremeta <l.szeremeta.dev+megen@gmail.com>"
 
 # Update server config
 RUN ln -sf /proc/self/fd/1 /var/log/apache2/access.log \
