@@ -10,5 +10,7 @@ RUN ln -sf /proc/self/fd/1 /var/log/apache2/access.log \
   && sed -i 's/ServerTokens\ OS/ServerTokens \Prod/g' /etc/apache2/conf-enabled/security.conf \
   && sed -i 's/ServerSignature\ On/ServerSignature \Off/g' /etc/apache2/conf-enabled/security.conf
 
-# Add MEgen
-COPY . /var/www/html/
+WORKDIR /var/www/html/
+
+# Add MEgen (see .dockerignore)
+COPY . .

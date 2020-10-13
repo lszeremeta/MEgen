@@ -1,5 +1,5 @@
 .*
-logo
+logo/
 !logo/megen.svg
 Dockerfile
 LICENSE
