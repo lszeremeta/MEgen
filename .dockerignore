@@ -1,7 +1,6 @@
-.gitignore
-.gitignore
-.github
+.*
 logo
+!logo/megen.svg
 Dockerfile
 LICENSE
 README.md
