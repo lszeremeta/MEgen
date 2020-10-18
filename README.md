@@ -12,7 +12,7 @@ Structured data are additional data placed on websites. They are not visible to 
 
 MEgen needs a HTTP server to work (e.g. [Apache](https://httpd.apache.org/) or [NGINX](https://www.nginx.com/)). You can also use Docker image to run app fast and easy.
 
-### Pre-build Docker image
+### Docker image
 
 You can use the pre-built image on [Docker Hub](https://hub.docker.com/r/lszeremeta/megen):
 
