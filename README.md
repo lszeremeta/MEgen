@@ -1,5 +1,7 @@
 # <img src="https://raw.githubusercontent.com/lszeremeta/MEgen/master/logo/megen.png" alt="MEgen logo" width="800">
 
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/842995154df2480ab6b998553c98aa1b)](https://www.codacy.com/gh/lszeremeta/MEgen/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=lszeremeta/MEgen&amp;utm_campaign=Badge_Grade) [![Docker Image Size (latest by date)](https://img.shields.io/docker/image-size/lszeremeta/megen?label=Docker%20image%20size)](https://hub.docker.com/r/lszeremeta/megen)
+
 MEgen is convenient online form to generate structured data about molecules. It supports all common structured data formats - [JSON-LD](https://json-ld.org/), [RDFa](http://rdfa.info/) and [Microdata](https://schema.org/docs/gs.html). MEgen was created using [PHP](https://www.php.net/) (back-end) and [Bootstrap](https://getbootstrap.com/) (front-end).
 
 ## What are structured data
