@@ -10,7 +10,7 @@ Structured data are additional data placed on websites. They are not visible to 
 
 ## How to start
 
-MEgen needs a HTTP server to work (e.g. [Apache](https://httpd.apache.org/) or [NGINX](https://www.nginx.com/)). You can also use Docker image to run app fast and easy.
+MEgen needs PHP and HTTP server to work (e.g. [Apache](https://httpd.apache.org/) or [NGINX](https://www.nginx.com/)). You can also use Docker image to run app fast and easy.
 
 ### Docker image
 
