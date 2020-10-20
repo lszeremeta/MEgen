@@ -379,5 +379,4 @@ jsonld_html_end;
 }
 
 echo $doc;
-exit();
 
