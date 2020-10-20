@@ -344,9 +344,6 @@ microdata;
 $format = $_POST['output-format'];
 
 if ($format === "JSON-LD with HTML") {
-    header('Content-type: text/html');
-    header('Content-Disposition: attachment; filename="jsonld.html"');
-
     $doc = <<<jsonld_html_start
 <!DOCTYPE html>
 <html lang="en">
@@ -361,21 +358,24 @@ jsonld_html_start;
   </head>
 </html>
 jsonld_html_end;
+
+    header('Content-type: text/html');
+    header('Content-Disposition: attachment; filename="jsonld.html"');
 } elseif ($format === "JSON-LD") {
+    $doc = createJSONLDOutput();
+
     header('Content-type: application/ld+json');
     header('Content-Disposition: attachment; filename="jsonld.jsonld"');
-
-    $doc = createJSONLDOutput();
 } elseif ($format === "RDFa") {
+    $doc = createRDFaOutput();
+
     header('Content-type: text/html');
     header('Content-Disposition: attachment; filename="rdfa.html"');
-
-    $doc = createRDFaOutput();
 } elseif ($format === "Microdata") {
+    $doc = createMicrodataOutput();
+
     header('Content-type: text/html');
     header('Content-Disposition: attachment; filename="microdata.html"');
-
-    $doc = createMicrodataOutput();
 }
 
 echo $doc;
