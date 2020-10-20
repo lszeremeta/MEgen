@@ -1,6 +1,3 @@
-.*
-logo/
+*
+!*.php
 !logo/megen.svg
-Dockerfile
-LICENSE
-README.md

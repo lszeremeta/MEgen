@@ -2,6 +2,8 @@
 
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/842995154df2480ab6b998553c98aa1b)](https://www.codacy.com/gh/lszeremeta/MEgen/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=lszeremeta/MEgen&amp;utm_campaign=Badge_Grade) [![Docker Image Size (latest by date)](https://img.shields.io/docker/image-size/lszeremeta/megen?label=Docker%20image%20size)](https://hub.docker.com/r/lszeremeta/megen)
 
+https://github.com/play-with-docker/stacks/raw/cff22438cb4195ace27f9b15784bbb497047afa7/assets/images/button.png
+
 MEgen is convenient online form to generate structured data about molecules. It supports all common structured data formats - [JSON-LD](https://json-ld.org/), [RDFa](http://rdfa.info/) and [Microdata](https://schema.org/docs/gs.html). MEgen was created using [PHP](https://www.php.net/) (back-end) and [Bootstrap](https://getbootstrap.com/) (front-end).
 
 ## What are structured data
@@ -19,6 +21,8 @@ You can use the pre-built image on [Docker Hub](https://hub.docker.com/r/lszerem
     docker run --name megen -p 4000:80 -d lszeremeta/megen:latest
 
 You can then use the app by reaching http://localhost:4000.
+
+[![Try in PWD](https://github.com/play-with-docker/stacks/raw/cff22438cb4195ace27f9b15784bbb497047afa7/assets/images/button.png)](http://play-with-docker.com/?stack=https://raw.githubusercontent.com/lszeremeta/MEgen/master/stack.yml)
 
 ### Local Docker build
 
