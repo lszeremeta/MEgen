@@ -1,0 +1,26 @@
+#logo {
+    display: block;
+    max-width: 90%;
+    margin: auto;
+    margin-bottom: 4%;
+}
+
+body {
+    background-color: #dfdfdf;
+    padding-top: 4%;
+    padding-bottom: 4%;
+}
+
+button, .btn {
+    border-radius: 50px;
+    margin: auto;
+    border: 0;
+}
+
+.btn-primary {
+    background-color: #5bc0be;
+}
+
+.col-form-label {
+    font-weight: 700;
+}

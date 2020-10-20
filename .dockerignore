@@ -1,3 +1,5 @@
 *
+!*.html
 !*.php
+!*.css
 !logo/megen.svg
