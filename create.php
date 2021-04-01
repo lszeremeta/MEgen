@@ -31,7 +31,6 @@ jsonld;
         $description1 = isset($_POST["description-$i"]) ? $_POST["description-$i"] : '';
         $disambiguatingdescription1 = isset($_POST["disambiguating-description-$i"]) ? $_POST["disambiguating-description-$i"] : '';
         $image1 = isset($_POST["image-$i"]) ? $_POST["image-$i"] : '';
-        $additionaltype1 = isset($_POST["additional-type-$i"]) ? $_POST["additional-type-$i"] : '';
         $alternatename1 = isset($_POST["alternate-name-$i"]) ? $_POST["alternate-name-$i"] : '';
         $sameas1 = isset($_POST["same-as-$i"]) ? $_POST["same-as-$i"] : '';
 
@@ -76,9 +75,6 @@ jsonld;
         }
         if ($image1 != '') {
             $doc = $doc . "\n  \"image\" : \"$image1\",";
-        }
-        if ($additionaltype1 != '') {
-            $doc = $doc . "\n  \"additionalType\" : \"$additionaltype1\",";
         }
         if ($alternatename1 != '') {
             $doc = $doc . "\n  \"alternateName\" : \"$alternatename1\",";
@@ -134,9 +130,6 @@ jsonld;
     "image" : {
       "@id" : "https://schema.org/image"
     },
-    "additionalType" : {
-      "@id" : "https://schema.org/additionalType"
-    },
     "alternateName" : {
       "@id" : "https://schema.org/alternateName"
     },
@@ -188,7 +181,6 @@ rdfa;
         $description1 = isset($_POST["description-$i"]) ? htmlspecialchars($_POST["description-$i"]) : '';
         $disambiguatingdescription1 = isset($_POST["disambiguating-description-$i"]) ? htmlspecialchars($_POST["disambiguating-description-$i"]) : '';
         $image1 = isset($_POST["image-$i"]) ? htmlspecialchars($_POST["image-$i"]) : '';
-        $additionaltype1 = isset($_POST["additional-type-$i"]) ? htmlspecialchars($_POST["additional-type-$i"]) : '';
         $alternatename1 = isset($_POST["alternate-name-$i"]) ? htmlspecialchars($_POST["alternate-name-$i"]) : '';
         $sameas1 = isset($_POST["same-as-$i"]) ? htmlspecialchars($_POST["same-as-$i"]) : '';
 
@@ -231,9 +223,6 @@ rdfa;
         }
         if ($image1 != '') {
             $doc = $doc . "\n      <img src='$image1' alt='Image of the Molecule$i' rel='schema:image'/>";
-        }
-        if ($additionaltype1 != '') {
-            $doc = $doc . "\n      <a href='$additionaltype1' rel='schema:additionalType'>$additionaltype1</a>";
         }
         if ($alternatename1 != '') {
             $doc = $doc . "\n      <div property='schema:alternateName'>$alternatename1</div>";
@@ -282,7 +271,6 @@ microdata;
         $description1 = isset($_POST["description-$i"]) ? htmlspecialchars($_POST["description-$i"]) : '';
         $disambiguatingdescription1 = isset($_POST["disambiguating-description-$i"]) ? htmlspecialchars($_POST["disambiguating-description-$i"]) : '';
         $image1 = isset($_POST["image-$i"]) ? htmlspecialchars($_POST["image-$i"]) : '';
-        $additionaltype1 = isset($_POST["additional-type-$i"]) ? htmlspecialchars($_POST["additional-type-$i"]) : '';
         $alternatename1 = isset($_POST["alternate-name-$i"]) ? htmlspecialchars($_POST["alternate-name-$i"]) : '';
         $sameas1 = isset($_POST["same-as-$i"]) ? htmlspecialchars($_POST["same-as-$i"]) : '';
 
@@ -325,9 +313,6 @@ microdata;
         }
         if ($image1 != '') {
             $doc = $doc . "\n      <img src='$image1' alt='Image of the Molecule$i' itemprop='image'/>";
-        }
-        if ($additionaltype1 != '') {
-            $doc = $doc . "\n      <a href='$image1' itemprop='additionalType'>$additionaltype1</a>";
         }
         if ($alternatename1 != '') {
             $doc = $doc . "\n      <div itemprop='alternateName'>$alternatename1</div>";
