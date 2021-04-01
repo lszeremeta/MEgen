@@ -230,16 +230,16 @@ rdfa;
             $doc = $doc . "\n      <div property='schema:disambiguatingDescription'>$disambiguatingdescription1</div>";
         }
         if ($image1 != '') {
-            $doc = $doc . "\n      <a rel='schema:image' href='$image1'>$image1</a>";
+            $doc = $doc . "\n      <img src='$image1' alt='Image of the Molecule$i' rel='schema:image'/>";
         }
         if ($additionaltype1 != '') {
-            $doc = $doc . "\n      <a rel='schema:additionalType' href='$additionaltype1'>$additionaltype1</a>";
+            $doc = $doc . "\n      <a href='$additionaltype1' rel='schema:additionalType'>$additionaltype1</a>";
         }
         if ($alternatename1 != '') {
             $doc = $doc . "\n      <div property='schema:alternateName'>$alternatename1</div>";
         }
         if ($sameas1 != '') {
-            $doc = $doc . "\n      <a rel='schema:sameAs' href='$sameas1'>$sameas1</a>";
+            $doc = $doc . "\n      <a href='$sameas1' rel='schema:sameAs'>$sameas1</a>";
         }
 
         $doc = $doc . "\n    </div>\n";
@@ -324,7 +324,7 @@ microdata;
             $doc = $doc . "\n      <div itemprop='disambiguatingDescription'>$disambiguatingdescription1</div>";
         }
         if ($image1 != '') {
-            $doc = $doc . "\n      <a href='$image1' itemprop='image'>$image1</a>";
+            $doc = $doc . "\n      <img src='$image1' alt='Image of the Molecule$i' itemprop='image'/>";
         }
         if ($additionaltype1 != '') {
             $doc = $doc . "\n      <a href='$image1' itemprop='additionalType'>$additionaltype1</a>";
