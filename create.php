@@ -221,7 +221,7 @@ rdfa;
             $doc = $doc . "\n      <div property='schema:disambiguatingDescription'>$disambiguatingdescription1</div>";
         }
         if ($image1 != '') {
-            $doc = $doc . "\n      <img src='$image1' alt='Image of the Molecule$i' rel='schema:image'/>";
+            $doc = $doc . "\n      <img src='$image1' alt='Image of the Molecule$i' rel='schema:image'>";
         }
         if ($alternatename1 != '') {
             $doc = $doc . "\n      <div property='schema:alternateName'>$alternatename1</div>";
@@ -311,7 +311,7 @@ microdata;
             $doc = $doc . "\n      <div itemprop='disambiguatingDescription'>$disambiguatingdescription1</div>";
         }
         if ($image1 != '') {
-            $doc = $doc . "\n      <img src='$image1' alt='Image of the Molecule$i' itemprop='image'/>";
+            $doc = $doc . "\n      <img src='$image1' alt='Image of the Molecule$i' itemprop='image'>";
         }
         if ($alternatename1 != '') {
             $doc = $doc . "\n      <div itemprop='alternateName'>$alternatename1</div>";
