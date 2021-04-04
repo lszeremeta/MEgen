@@ -12,12 +12,12 @@ function createJSONLDOutput()
     $doc = <<<jsonld
 {
   "@graph" : [
-  {
+    {
       "@id": "https://github.com/lszeremeta/MEgen",
       "@type": "http://schema.org/Organization",
       "http://schema.org/name": "MEgen"
-  },
-  {
+    },
+    {
       "@id": "#",
       "@type": "http://schema.org/Dataset",
       "http://schema.org/about": {
@@ -38,7 +38,7 @@ function createJSONLDOutput()
       },
       "http://schema.org/temporal": "$year",
       "http://schema.org/url": "https://github.com/lszeremeta/MEgen"
-  },
+    },
 
 jsonld;
     $count = isset($_POST['count']) ? $_POST['count'] : '1';
@@ -70,62 +70,62 @@ jsonld;
         $alternatename1 = isset($_POST["alternate-name-$i"]) ? $_POST["alternate-name-$i"] : '';
         $sameas1 = isset($_POST["same-as-$i"]) ? $_POST["same-as-$i"] : '';
 
-        $doc = $doc . "  {";
-        $doc = $doc . "\n  \"@id\" : \"$subject1\",";
-        $doc = $doc . "\n  \"@type\" : \"https://schema.org/MolecularEntity\",";
+        $doc = $doc . "    {";
+        $doc = $doc . "\n      \"@id\" : \"$subject1\",";
+        $doc = $doc . "\n      \"@type\" : \"https://schema.org/MolecularEntity\",";
         if ($identifier1 != '') {
-            $doc = $doc . "\n  \"identifier\" : \"$identifier1\",";
+            $doc = $doc . "\n      \"identifier\" : \"$identifier1\",";
         }
         if ($name1 != '') {
-            $doc = $doc . "\n  \"name\" : \"$name1\",";
+            $doc = $doc . "\n      \"name\" : \"$name1\",";
         }
         if ($inchikey1 != '') {
-            $doc = $doc . "\n  \"inChIKey\" : \"$inchikey1\",";
+            $doc = $doc . "\n      \"inChIKey\" : \"$inchikey1\",";
         }
         if ($inchi1 != '') {
-            $doc = $doc . "\n  \"inChI\" : \"$inchi1\",";
+            $doc = $doc . "\n      \"inChI\" : \"$inchi1\",";
         }
         if ($smiles1 != '') {
-            $doc = $doc . "\n  \"smiles\" : \"$smiles1\",";
+            $doc = $doc . "\n      \"smiles\" : \"$smiles1\",";
         }
         if ($url1 != '') {
-            $doc = $doc . "\n  \"url\" : \"$url1\",";
+            $doc = $doc . "\n      \"url\" : \"$url1\",";
         }
         if ($iupacname1 != '') {
-            $doc = $doc . "\n  \"iupacName\" : \"$iupacname1\",";
+            $doc = $doc . "\n      \"iupacName\" : \"$iupacname1\",";
         }
         if ($molecularformula1 != '') {
-            $doc = $doc . "\n  \"molecularFormula\" : \"$molecularformula1\",";
+            $doc = $doc . "\n      \"molecularFormula\" : \"$molecularformula1\",";
         }
         if ($molecularweight1 != '') {
-            $doc = $doc . "\n  \"molecularWeight\" : \"$molecularweight1\",";
+            $doc = $doc . "\n      \"molecularWeight\" : \"$molecularweight1\",";
         }
         if ($monoisotopicmolecularweight1 != '') {
-            $doc = $doc . "\n  \"monoisotopicMolecularWeight\" : \"$monoisotopicmolecularweight1\",";
+            $doc = $doc . "\n      \"monoisotopicMolecularWeight\" : \"$monoisotopicmolecularweight1\",";
         }
         if ($description1 != '') {
-            $doc = $doc . "\n  \"description\" : \"$description1\",";
+            $doc = $doc . "\n      \"description\" : \"$description1\",";
         }
         if ($disambiguatingdescription1 != '') {
-            $doc = $doc . "\n  \"disambiguatingDescription\" : \"$disambiguatingdescription1\",";
+            $doc = $doc . "\n      \"disambiguatingDescription\" : \"$disambiguatingdescription1\",";
         }
         if ($image1 != '') {
-            $doc = $doc . "\n  \"image\" : \"$image1\",";
+            $doc = $doc . "\n      \"image\" : \"$image1\",";
         }
         if ($alternatename1 != '') {
-            $doc = $doc . "\n  \"alternateName\" : \"$alternatename1\",";
+            $doc = $doc . "\n      \"alternateName\" : \"$alternatename1\",";
         }
         if ($sameas1 != '') {
-            $doc = $doc . "\n  \"sameAs\" : \"$sameas1\",";
+            $doc = $doc . "\n      \"sameAs\" : \"$sameas1\",";
         }
 
-        $doc = substr($doc, 0, -1);
-        $doc = $doc . "  },";
+        $doc = substr($doc, 0, -1) . "\n";
+        $doc = $doc . "    },";
     }
-    $doc = substr($doc, 0, -1);
+    $doc = substr($doc, 0, -1) . "\n";
 
     $doc = $doc . <<<jsonld
- ],
+  ],
   "@context" : {
     "identifier" : {
       "@id" : "https://schema.org/identifier"
@@ -293,7 +293,7 @@ ds;
         $doc = $doc . "\n    </div>\n";
     }
 
-    return $doc . "\n  </body>\n</html>";
+    return $doc . "  </body>\n</html>";
 }
 
 function createMicrodataOutput()
@@ -310,20 +310,19 @@ function createMicrodataOutput()
 microdata;
 
     $ds = <<<ds
-
-  <div itemscope itemtype="https://schema.org/Dataset">
-    <div itemprop="name" content="Molecules"></div>
-    <div itemprop="keywords" content="cheminformatics"></div>
-    <div itemprop="keywords" content="molecules"></div>
-    <div itemprop="keywords" content="chemical compounds"></div>
-    <div itemprop="temporal" content="$year"></div>
-    <div itemprop="url" content="https://github.com/lszeremeta/MEgen"></div>
-    <div itemprop="description" content="This is a dataset of molecules generated by MEgen."></div>
-    <div itemprop="creator" itemscope itemtype="https://schema.org/Organization">
-      <div itemprop="name" content="MEgen"></div>
+    <div itemscope itemtype="https://schema.org/Dataset">
+      <div itemprop="name" content="Molecules"></div>
+      <div itemprop="keywords" content="cheminformatics"></div>
+      <div itemprop="keywords" content="molecules"></div>
+      <div itemprop="keywords" content="chemical compounds"></div>
+      <div itemprop="temporal" content="$year"></div>
+      <div itemprop="url" content="https://github.com/lszeremeta/MEgen"></div>
+      <div itemprop="description" content="This is a dataset of molecules generated by MEgen."></div>
+      <div itemprop="creator" itemscope itemtype="https://schema.org/Organization">
+        <div itemprop="name" content="MEgen"></div>
+      </div>
+      <div itemprop="license" content="http://opendatacommons.org/licenses/pddl/1.0/"></div>
     </div>
-    <div itemprop="license" content="http://opendatacommons.org/licenses/pddl/1.0/"></div>
-  </div>
 
 ds;
 
