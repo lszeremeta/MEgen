@@ -17,68 +17,115 @@ $count = isset($_GET['count']) ? $_GET['count'] : 2;
         <div class="form-group row">
             <label class="col-sm-3 col-form-label">Subject IRI</label>
             <div class="col-sm-9">
-                <input class="form-control iri-thing<?php echo $count; ?>" type="url" placeholder="IRI here..."
-                       name="iri-<?php echo $count; ?>">
+                <input class="form-control iri-thing<?php echo $count; ?>"
+                       name="iri-<?php echo $count; ?>" placeholder="IRI here..." type="url">
             </div>
         </div>
         <div class="form-group row">
             <label class="col-sm-3 col-form-label">identifier</label>
             <div class="col-sm-9">
-                <input class="form-control" type="text" placeholder="identifier here..."
-                       name="identifier-<?php echo $count; ?>">
+                <input class="form-control" name="identifier-<?php echo $count; ?>" placeholder="identifier here..."
+                       required
+                       type="text">
             </div>
         </div>
         <div class="form-group row">
             <label class="col-sm-3 col-form-label">name</label>
             <div class="col-sm-9">
-                <input class="form-control" type="text" placeholder="name here..." name="name-<?php echo $count; ?>">
+                <input class="form-control" name="name-<?php echo $count; ?>" placeholder="name here..." required
+                       type="text">
             </div>
         </div>
         <div class="form-group row">
             <label class="col-sm-3 col-form-label">inChIKey</label>
             <div class="col-sm-9">
-                <input class="form-control" type="text" placeholder="inChIKey here..."
-                       name="inchikey-<?php echo $count; ?>">
+                <input class="form-control" maxlength="27" minlength="27" name="inchikey-<?php echo $count; ?>"
+                       placeholder="inChIKey here..." type="text">
             </div>
         </div>
         <div class="form-group row">
             <label class="col-sm-3 col-form-label">inChI</label>
             <div class="col-sm-9">
-                <input class="form-control" type="text" placeholder="inChI here..." name="inchi-<?php echo $count; ?>">
+                <input class="form-control" minlength="6" name="inchi-<?php echo $count; ?>" placeholder="inChI here..."
+                       type="text">
             </div>
         </div>
         <div class="form-group row">
             <label class="col-sm-3 col-form-label">SMILES</label>
             <div class="col-sm-9">
-                <input class="form-control" type="text" placeholder="SMILES here..."
-                       name="smiles-<?php echo $count; ?>">
+                <input class="form-control" name="smiles-<?php echo $count; ?>" placeholder="SMILES here..."
+                       type="text">
             </div>
         </div>
         <div class="form-group row">
             <label class="col-sm-3 col-form-label">url</label>
             <div class="col-sm-9">
-                <input class="form-control" type="url" placeholder="url here..." name="url-<?php echo $count; ?>">
+                <input class="form-control" name="url-<?php echo $count; ?>" placeholder="URL here..." required
+                       type="url">
             </div>
         </div>
         <div class="form-group row">
             <label class="col-sm-3 col-form-label">iupacName</label>
             <div class="col-sm-9">
-                <input class="form-control" type="text" placeholder="iupac name here..."
-                       name="iupac-name-<?php echo $count; ?>">
+                <input class="form-control" name="iupac-name-<?php echo $count; ?>" placeholder="iupac name here..."
+                       type="text">
             </div>
         </div>
         <div class="form-group row">
             <label class="col-sm-3 col-form-label">molecularFormula</label>
             <div class="col-sm-9">
-                <input class="form-control" type="text" placeholder="molecularFormula here..."
-                       name="molecular-formula-<?php echo $count; ?>">
+                <input class="form-control" name="molecular-formula-<?php echo $count; ?>" pattern="[a-zA-Z0-9]+"
+                       placeholder="molecularFormula here..." type="text">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-3 col-form-label">molecularWeight</label>
+            <div class="col-sm-9">
+                <input class="form-control" name="molecular-weight-<?php echo $count; ?>"
+                       placeholder="molecularWeight here (e.g. 0.01 mg)..." type="text">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-3 col-form-label">monoisotopicMolecularWeight</label>
+            <div class="col-sm-9">
+                <input class="form-control" name="monoisotopic-molecular-weight-<?php echo $count; ?>"
+                       placeholder="monoisotopicMolecularWeight here (e.g. 0.01 mg)..." type="text">
             </div>
         </div>
         <div class="form-group row">
             <label class="col-sm-3 col-form-label">description</label>
             <div class="col-sm-9">
-                <input class="form-control" type="text" placeholder="description here..."
-                       name="description-<?php echo $count; ?>">
+                <input class="form-control" minlength="10" name="description-<?php echo $count; ?>"
+                       placeholder="description here..." type="text">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-3 col-form-label">disambiguatingDescription</label>
+            <div class="col-sm-9">
+                <input class="form-control" name="disambiguating-description-<?php echo $count; ?>"
+                       placeholder="disambiguatingDescription here..." type="text">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-3 col-form-label">image</label>
+            <div class="col-sm-9">
+                <input class="form-control" name="image-<?php echo $count; ?>" placeholder="image URL here..."
+                       type="url">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-3 col-form-label">alternateName</label>
+            <div class="col-sm-9">
+                <input class="form-control" name="alternate-name-<?php echo $count; ?>"
+                       placeholder="alternateName here..."
+                       type="text">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-3 col-form-label">sameAs</label>
+            <div class="col-sm-9">
+                <input class="form-control" name="same-as-<?php echo $count; ?>" placeholder="sameAs URL here..."
+                       type="url">
             </div>
         </div>
     </div>
