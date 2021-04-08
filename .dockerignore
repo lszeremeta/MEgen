@@ -3,3 +3,6 @@
 !*.php
 !*.css
 !logo/megen.svg
+!.png
+!favicon.ico
+!site.webmanifest
