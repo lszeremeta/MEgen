@@ -4,13 +4,53 @@
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="styles.css" rel="stylesheet">
+    <link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+          integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+          rel="stylesheet"/>
     <title>Molecular Entity Generator</title>
 </head>
 
 <body>
 <img alt="Molecular Entity Generator" id="logo" src="logo/megen.svg">
+
+<div class="card container bg-info text-center text-lg-start text-light">
+    <div class="container p-4">
+        <div class="row">
+            <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+                <h1 class="text-uppercase h5">About MEgen</h1>
+
+                <p>
+                    Molecular Entity Generator (MEgen) is convenient online form to generate structured data about
+                    molecules. It supports all common
+                    structured data formats - <a class="text-white-50"
+                                                 href="https://json-ld.org/"
+                                                 target="_blank">JSON-LD</a>, <a class="text-white-50"
+                                                                                 href="http://rdfa.info/"
+                                                                                 target="_blank">RDFa</a> and <a
+                        class="text-white-50"
+                        href="https://www.w3.org/TR/microdata/"
+                        target="_blank">Microdata</a>.
+                </p>
+            </div>
+
+            <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+                <h1 class="text-uppercase h5">What are structured data</h1>
+
+                <p>
+                    Structured data are additional data placed on websites. They are not visible to ordinary internet
+                    users, but can be easily processed by machines. MEgen use <a class="text-white-50"
+                                                                                 href="https://bioschemas.org/profiles/MolecularEntity/0.5-RELEASE/"
+                                                                                 target="_blank">MolecularEntity
+                    profile</a>.
+                </p>
+            </div>
+        </div>
+    </div>
+
+</div>
+
 <form action="create.php" method="post">
     <input id="count" name="count" type="hidden" value="1">
     <div class="card container" id="m1">
@@ -155,7 +195,22 @@
         <button class="btn btn-primary btn-lg btn-block" type="submit">Generate</button>
     </div>
 </form>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> 
+
+<footer class=" text-center text-lg-start">
+    <div class="text-center p-3">
+        <div>&copy; 2019-2021 Copyright by Łukasz Szeremeta, Dominik Tomaszuk</div>
+        <section class="mb-3">
+            <a class="btn btn-primary btn-floating m-1" href="https://github.com/lszeremeta/MEgen" role="button"
+               style="background-color: #333333" target="_blank"><i
+                    class="fab fa-github"></i></a>
+            <a class="btn btn-primary btn-floating m-1" href="https://hub.docker.com/r/lszeremeta/megen" role="button"
+               style="background-color: #55acee" target="_blank"><i
+                    class="fab fa-docker"></i></a>
+        </section>
+    </div>
+</footer>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
 
 <script>
