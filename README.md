@@ -6,7 +6,7 @@ MEgen is convenient online form to generate structured data about molecules. It 
 
 ## What are structured data
 
-Structured data are additional data placed on websites. They are not visible to ordinary internet users, but can be easily processed by machines. There are 3 formats that we can use to save structured data - [JSON-LD](https://json-ld.org/), [RDFa](http://rdfa.info/) and [Microdata](https://www.w3.org/TR/microdata/). MEgen supports them all and use [MolecularEntity profile](https://bioschemas.org/profiles/MolecularEntity/0.5-RELEASE/).
+[Structured data](https://developers.google.com/search/docs/guides/intro-structured-data) are additional data placed on websites. They are not visible to ordinary internet users, but can be easily processed by machines. There are 3 formats that we can use to save structured data - [JSON-LD](https://json-ld.org/), [RDFa](http://rdfa.info/) and [Microdata](https://www.w3.org/TR/microdata/). MEgen supports them all and use [MolecularEntity profile](https://bioschemas.org/profiles/MolecularEntity/0.5-RELEASE/).
 
 ## How to start
 
