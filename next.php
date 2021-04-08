@@ -18,7 +18,7 @@ $count = isset($_GET['count']) ? $_GET['count'] : 2;
             <label class="col-sm-3 col-form-label">Subject IRI</label>
             <div class="col-sm-9">
                 <input class="form-control iri-thing<?php echo $count; ?>"
-                       name="iri-<?php echo $count; ?>" placeholder="IRI here..." type="url">
+                       name="iri-<?php echo $count; ?>" placeholder="IRI here..." required type="url">
             </div>
         </div>
         <div class="form-group row">
