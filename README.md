@@ -2,9 +2,9 @@
 
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/842995154df2480ab6b998553c98aa1b)](https://www.codacy.com/gh/lszeremeta/MEgen/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=lszeremeta/MEgen&amp;utm_campaign=Badge_Grade) [![Docker Image Size (latest by date)](https://img.shields.io/docker/image-size/lszeremeta/megen?label=Docker%20image%20size)](https://hub.docker.com/r/lszeremeta/megen)
 
-MEgen is convenient online form to generate structured data about molecules. It supports all common structured data formats - [JSON-LD](https://json-ld.org/), [RDFa](http://rdfa.info/) and [Microdata](https://schema.org/docs/gs.html). MEgen was created using [PHP](https://www.php.net/) and [Bootstrap](https://getbootstrap.com/). Do you love️ Docker? You can use a [MEgen container](https://hub.docker.com/r/lszeremeta/megen). Come on, try MEgen now!
+Molecular Entity Generator (MEgen) is convenient online form to generate structured data about molecules. It supports all common structured data formats - [JSON-LD](https://json-ld.org/), [RDFa](http://rdfa.info/) and [Microdata](https://schema.org/docs/gs.html). MEgen was created using [PHP](https://www.php.net/) and [Bootstrap](https://getbootstrap.com/). Do you love️ Docker? You can use a [MEgen container](https://hub.docker.com/r/lszeremeta/megen). Come on, try MEgen now!
 
-## What are structured data
+## What is structured data
 
 [Structured data](https://developers.google.com/search/docs/guides/intro-structured-data) are additional data placed on websites. They are not visible to ordinary internet users, but can be easily processed by machines. There are 3 formats that we can use to save structured data - [JSON-LD](https://json-ld.org/), [RDFa](http://rdfa.info/) and [Microdata](https://www.w3.org/TR/microdata/). MEgen supports them all and use [MolecularEntity profile](https://bioschemas.org/profiles/MolecularEntity/0.5-RELEASE/).
 
