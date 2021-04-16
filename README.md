@@ -35,7 +35,7 @@ You can then use the app by reaching http://localhost:4000.
 
 ## Contribution
 
-Would you like to improve this project? Great! We are waiting for your help and suggestions. If you are new in open source contributions, read [How to Contribute to Open Source](https://opensource.guide/how-to-contribute/).
+Would you like to improve this project? Great! We are waiting for your help and suggestions. If you are new to open source contributions, read [How to Contribute to Open Source](https://opensource.guide/how-to-contribute/).
 
 ## License
 
