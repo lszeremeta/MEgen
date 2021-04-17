@@ -6,7 +6,7 @@ Molecular Entity Generator (MEgen) is a convenient online form to generate struc
 
 ## What is structured data
 
-[Structured data](https://developers.google.com/search/docs/guides/intro-structured-data) are additional data placed on websites. They are not visible to ordinary internet users but can be easily processed by machines. There are 3 formats that we can use to save structured data - [JSON-LD](https://json-ld.org/), [RDFa](http://rdfa.info/), and [Microdata](https://www.w3.org/TR/microdata/). MEgen supports them all and uses the [MolecularEntity profile](https://bioschemas.org/profiles/MolecularEntity/0.5-RELEASE/).
+[Structured data](https://developers.google.com/search/docs/guides/intro-structured-data) is additional data placed on websites. It is not visible to ordinary internet users but can be easily processed by machines. There are 3 formats that we can use to save structured data - [JSON-LD](https://json-ld.org/), [RDFa](http://rdfa.info/), and [Microdata](https://www.w3.org/TR/microdata/). MEgen supports them all and uses the [MolecularEntity profile](https://bioschemas.org/profiles/MolecularEntity/0.5-RELEASE/).
 
 ## How to start
 
@@ -18,7 +18,7 @@ You can use the pre-built image on [Docker Hub](https://hub.docker.com/r/lszerem
 
     docker run --name megen -p 4000:80 -d lszeremeta/megen:latest
 
-You can then use the app by reaching http://localhost:4000.
+Then, you can use the app by reaching http://localhost:4000.
 
 [![Try in PWD](https://github.com/play-with-docker/stacks/raw/cff22438cb4195ace27f9b15784bbb497047afa7/assets/images/button.png)](http://play-with-docker.com/?stack=https://raw.githubusercontent.com/lszeremeta/MEgen/master/stack.yml)
 
@@ -31,7 +31,7 @@ Another option is to build the container yourself. You need to download the cont
     docker build -t megen .
     docker run --name megen-container -p 4000:80 -d megen
 
-You can then use the app by reaching http://localhost:4000.
+Then, you can use the app by reaching http://localhost:4000.
 
 ## Contribution
 
