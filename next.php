@@ -18,13 +18,14 @@ $count = isset($_GET['count']) ? $_GET['count'] : 2;
             <label class="col-sm-3 col-form-label">Subject IRI</label>
             <div class="col-sm-9">
                 <input class="form-control iri-thing<?php echo $count; ?>"
-                       name="iri-<?php echo $count; ?>" placeholder="IRI here..." required type="url">
+                       name="iri-<?php echo $count; ?>" placeholder="IRI here... (required)" required type="url">
             </div>
         </div>
         <div class="form-group row">
             <label class="col-sm-3 col-form-label">identifier</label>
             <div class="col-sm-9">
-                <input class="form-control" name="identifier-<?php echo $count; ?>" placeholder="identifier here..."
+                <input class="form-control" name="identifier-<?php echo $count; ?>"
+                       placeholder="identifier here... (required)"
                        required
                        type="text">
             </div>
@@ -32,7 +33,8 @@ $count = isset($_GET['count']) ? $_GET['count'] : 2;
         <div class="form-group row">
             <label class="col-sm-3 col-form-label">name</label>
             <div class="col-sm-9">
-                <input class="form-control" name="name-<?php echo $count; ?>" placeholder="name here..." required
+                <input class="form-control" name="name-<?php echo $count; ?>" placeholder="name here... (required)"
+                       required
                        type="text">
             </div>
         </div>
@@ -60,7 +62,8 @@ $count = isset($_GET['count']) ? $_GET['count'] : 2;
         <div class="form-group row">
             <label class="col-sm-3 col-form-label">url</label>
             <div class="col-sm-9">
-                <input class="form-control" name="url-<?php echo $count; ?>" placeholder="URL here..." required
+                <input class="form-control" name="url-<?php echo $count; ?>" placeholder="URL here... (required)"
+                       required
                        type="url">
             </div>
         </div>
