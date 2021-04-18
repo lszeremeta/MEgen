@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     services:
       megen:
-        image: php:8-apache
+        image: php:8.0-apache
         ports:
           - 80:80
         volumes:
