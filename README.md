@@ -10,7 +10,7 @@ Molecular Entity Generator (MEgen) is a convenient online form to generate struc
 
 ## How to start
 
-MEgen needs PHP and HTTP server to work (e.g. [Apache](https://httpd.apache.org/) or [NGINX](https://www.nginx.com/)). You can also use Docker image to run the app fast and easy.
+MEgen needs HTTP server (e.g. [Apache](https://httpd.apache.org/) or [NGINX](https://www.nginx.com/)) and PHP to work. You can also use Docker image to run the app fast and easy.
 
 ### Docker image
 
