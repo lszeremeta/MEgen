@@ -1,3 +1,5 @@
+# Deploys MEgen when release published
+
 name: Publish release
 
 on:

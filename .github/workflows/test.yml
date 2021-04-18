@@ -1,9 +1,12 @@
-name: Prepare release
+# Tests MEgen on every push (excluding master branch) and pull request
+
+name: Test
 
 on:
   push:
-    tags:
-      - "v[0-9]+.[0-9]+.[0-9]+"
+    branches-ignore:
+      - master
+  pull_request:
 
 jobs:
   test:
@@ -27,21 +30,3 @@ jobs:
         with:
           name: jmeter-test-results
           path: reports/
-          
-          
-  release:
-    name: GitHub Release
-    runs-on: "ubuntu-latest"
-    needs: test
-
-    steps:
-      - name: Turnstyle
-        uses: softprops/turnstyle@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Create GitHuB release
-        uses: "marvinpinto/action-automatic-releases@latest"
-        with:
-          repo_token: "${{ secrets.GITHUB_TOKEN }}"
-          prerelease: false
-          draft: true
