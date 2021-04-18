@@ -1,4 +1,4 @@
-name: Create pre-release
+name: Prepare pre-release
 
 on:
   push:
