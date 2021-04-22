@@ -10,9 +10,16 @@ Molecular Entity Generator (MEgen) is a convenient online form to generate struc
 
 ## How to start
 
-MEgen needs HTTP server (e.g. [Apache](https://httpd.apache.org/) or [NGINX](https://www.nginx.com/)) and PHP to work. You can also use Docker image to run the app fast and easy.
+MEgen is available online. If you just want to try MEgen, this is the best option.
 
-### Docker image
+* [megen.top](https://megen.top) - corresponds to the [latest GitHub release](https://github.com/lszeremeta/MEgen/releases/latest) (the most stable version)
+* [beta.megen.top](https://beta.megen.top) - corresponds to the [GitHub pre-release](https://github.com/lszeremeta/MEgen/releases/tag/beta) (latest possible changes, but may be less stable; published after every change in the master branch)
+
+### Run Mengen on your own
+
+MEgen needs HTTP server (e.g. [Apache](https://httpd.apache.org/) or [NGINX](https://www.nginx.com/)) and [PHP](https://www.php.net/) to work. You can also use Docker image to run the app fast and easy.
+
+#### Docker image
 
 You can use the pre-built image on [Docker Hub](https://hub.docker.com/r/lszeremeta/megen):
 
@@ -22,7 +29,7 @@ Then, you can use the app by reaching http://localhost:4000.
 
 [![Try in PWD](https://github.com/play-with-docker/stacks/raw/cff22438cb4195ace27f9b15784bbb497047afa7/assets/images/button.png)](http://play-with-docker.com/?stack=https://raw.githubusercontent.com/lszeremeta/MEgen/master/stack.yml)
 
-### Local Docker build
+#### Local Docker build
 
 Another option is to build the container yourself. You need to download the contents of the [MEgen repository](https://github.com/lszeremeta/MEgen) and then build and run the application. If you don't want or can't use git, you can [download the zip archive](https://github.com/lszeremeta/MEgen/archive/master.zip) and extract it, then execute the last two commands inside extracted code directory.
 
