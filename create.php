@@ -227,67 +227,69 @@ ds;
         if ($subject1 == '') {
             $subject1 = '_:' . uniqid();
         }
-        $identifier1 = isset($_POST["identifier-$i"]) ? htmlspecialchars($_POST["identifier-$i"]) : '';
-        $name1 = isset($_POST["name-$i"]) ? htmlspecialchars($_POST["name-$i"]) : '';
-        $inchikey1 = isset($_POST["inchikey-$i"]) ? htmlspecialchars($_POST["inchikey-$i"]) : '';
-        $inchi1 = isset($_POST["inchi-$i"]) ? htmlspecialchars($_POST["inchi-$i"]) : '';
-        $smiles1 = isset($_POST["smiles-$i"]) ? htmlspecialchars($_POST["smiles-$i"]) : '';
-        $url1 = isset($_POST["url-$i"]) ? htmlspecialchars($_POST["url-$i"]) : '';
-        $iupacname1 = isset($_POST["iupac-name-$i"]) ? htmlspecialchars($_POST["iupac-name-$i"]) : '';
-        $molecularformula1 = isset($_POST["molecular-formula-$i"]) ? htmlspecialchars($_POST["molecular-formula-$i"]) : '';
-        $molecularweight1 = isset($_POST["molecular-weight-$i"]) ? htmlspecialchars($_POST["molecular-weight-$i"]) : '';
-        $monoisotopicmolecularweight1 = isset($_POST["monoisotopic-molecular-weight-$i"]) ? htmlspecialchars($_POST["monoisotopic-molecular-weight-$i"]) : '';
-        $description1 = isset($_POST["description-$i"]) ? htmlspecialchars($_POST["description-$i"]) : '';
-        $disambiguatingdescription1 = isset($_POST["disambiguating-description-$i"]) ? htmlspecialchars($_POST["disambiguating-description-$i"]) : '';
-        $image1 = isset($_POST["image-$i"]) ? htmlspecialchars($_POST["image-$i"]) : '';
-        $alternatename1 = isset($_POST["alternate-name-$i"]) ? htmlspecialchars($_POST["alternate-name-$i"]) : '';
-        $sameas1 = isset($_POST["same-as-$i"]) ? htmlspecialchars($_POST["same-as-$i"]) : '';
+        $identifier1 = isset($_POST["identifier-$i"]) ? htmlspecialchars($_POST["identifier-$i"], ENT_NOQUOTES) : '';
+        $name1 = isset($_POST["name-$i"]) ? htmlspecialchars($_POST["name-$i"], ENT_NOQUOTES) : '';
+        $inchikey1 = isset($_POST["inchikey-$i"]) ? htmlspecialchars($_POST["inchikey-$i"], ENT_NOQUOTES) : '';
+        $inchi1 = isset($_POST["inchi-$i"]) ? htmlspecialchars($_POST["inchi-$i"], ENT_NOQUOTES) : '';
+        $smiles1 = isset($_POST["smiles-$i"]) ? htmlspecialchars($_POST["smiles-$i"], ENT_NOQUOTES) : '';
+        $url1 = isset($_POST["url-$i"]) ? htmlspecialchars($_POST["url-$i"], ENT_NOQUOTES) : '';
+        $url1_att = isset($_POST["url-$i"]) ? htmlspecialchars($_POST["url-$i"], ENT_QUOTES) : '';
+        $iupacname1 = isset($_POST["iupac-name-$i"]) ? htmlspecialchars($_POST["iupac-name-$i"], ENT_NOQUOTES) : '';
+        $molecularformula1 = isset($_POST["molecular-formula-$i"]) ? htmlspecialchars($_POST["molecular-formula-$i"], ENT_NOQUOTES) : '';
+        $molecularweight1 = isset($_POST["molecular-weight-$i"]) ? htmlspecialchars($_POST["molecular-weight-$i"], ENT_NOQUOTES) : '';
+        $monoisotopicmolecularweight1 = isset($_POST["monoisotopic-molecular-weight-$i"]) ? htmlspecialchars($_POST["monoisotopic-molecular-weight-$i"], ENT_NOQUOTES) : '';
+        $description1 = isset($_POST["description-$i"]) ? htmlspecialchars($_POST["description-$i"], ENT_NOQUOTES) : '';
+        $disambiguatingdescription1 = isset($_POST["disambiguating-description-$i"]) ? htmlspecialchars($_POST["disambiguating-description-$i"], ENT_NOQUOTES) : '';
+        $image1 = isset($_POST["image-$i"]) ? htmlspecialchars($_POST["image-$i"], ENT_NOQUOTES) : '';
+        $alternatename1 = isset($_POST["alternate-name-$i"]) ? htmlspecialchars($_POST["alternate-name-$i"], ENT_QUOTES) : '';
+        $sameas1 = isset($_POST["same-as-$i"]) ? htmlspecialchars($_POST["same-as-$i"], ENT_NOQUOTES) : '';
+        $sameas1_att = isset($_POST["same-as-$i"]) ? htmlspecialchars($_POST["same-as-$i"], ENT_QUOTES) : '';
 
-        $doc = $doc . "    <div typeof='schema:MolecularEntity' about='$subject1'>";
+        $doc = $doc . "    <div typeof=\"schema:MolecularEntity\" about=\"$subject1\">";
         if ($identifier1 != '') {
-            $doc = $doc . "\n      <div property='schema:identifier'>$identifier1</div>";
+            $doc = $doc . "\n      <div property=\"schema:identifier\">$identifier1</div>";
         }
         if ($name1 != '') {
-            $doc = $doc . "\n      <div property='schema:name'>$name1</div>";
+            $doc = $doc . "\n      <div property=\"schema:name\">$name1</div>";
         }
         if ($inchikey1 != '') {
-            $doc = $doc . "\n      <div property='schema:inChIKey'>$inchikey1</div>";
+            $doc = $doc . "\n      <div property=\"schema:inChIKey\">$inchikey1</div>";
         }
         if ($inchi1 != '') {
-            $doc = $doc . "\n      <div property='schema:inChI'>$inchi1</div>";
+            $doc = $doc . "\n      <div property=\"schema:inChI\">$inchi1</div>";
         }
         if ($smiles1 != '') {
-            $doc = $doc . "\n      <div property='schema:smiles'>$smiles1</div>";
+            $doc = $doc . "\n      <div property=\"schema:smiles\">$smiles1</div>";
         }
         if ($url1 != '') {
-            $doc = $doc . "\n      <a rel='schema:url' href='$url1'>$url1</a>";
+            $doc = $doc . "\n      <a href=\"$url1_att\" rel=\"schema:url\">$url1</a>";
         }
         if ($iupacname1 != '') {
-            $doc = $doc . "\n      <div property='schema:iupacName'>$iupacname1</div>";
+            $doc = $doc . "\n      <div property=\"schema:iupacName\">$iupacname1</div>";
         }
         if ($molecularformula1 != '') {
-            $doc = $doc . "\n      <div property='schema:molecularFormula'>$molecularformula1</div>";
+            $doc = $doc . "\n      <div property=\"schema:molecularFormula\">$molecularformula1</div>";
         }
         if ($molecularweight1 != '') {
-            $doc = $doc . "\n      <div property='schema:molecularWeight'>$molecularweight1</div>";
+            $doc = $doc . "\n      <div property=\"schema:molecularWeight\">$molecularweight1</div>";
         }
         if ($monoisotopicmolecularweight1 != '') {
-            $doc = $doc . "\n      <div property='schema:monoisotopicMolecularWeight'>$monoisotopicmolecularweight1</div>";
+            $doc = $doc . "\n      <div property=\"schema:monoisotopicMolecularWeight\">$monoisotopicmolecularweight1</div>";
         }
         if ($description1 != '') {
-            $doc = $doc . "\n      <div property='schema:description'>$description1</div>";
+            $doc = $doc . "\n      <div property=\"schema:description\">$description1</div>";
         }
         if ($disambiguatingdescription1 != '') {
-            $doc = $doc . "\n      <div property='schema:disambiguatingDescription'>$disambiguatingdescription1</div>";
+            $doc = $doc . "\n      <div property=\"schema:disambiguatingDescription\">$disambiguatingdescription1</div>";
         }
         if ($image1 != '') {
-            $doc = $doc . "\n      <img src='$image1' alt='Image of the Molecule$i' rel='schema:image'>";
+            $doc = $doc . "\n      <img src=\"$image1\" alt=\"Image of the Molecule$i\" rel=\"schema:image\">";
         }
         if ($alternatename1 != '') {
-            $doc = $doc . "\n      <div property='schema:alternateName'>$alternatename1</div>";
+            $doc = $doc . "\n      <div property=\"schema:alternateName\">$alternatename1</div>";
         }
         if ($sameas1 != '') {
-            $doc = $doc . "\n      <a href='$sameas1' rel='schema:sameAs'>$sameas1</a>";
+            $doc = $doc . "\n      <a href=\"$sameas1_att\" rel=\"schema:sameAs\">$sameas1</a>";
         }
 
         $doc = $doc . "\n    </div>\n";
@@ -340,72 +342,74 @@ ds;
         if ($subject1 == '') {
             $subject1 = '_:' . uniqid();
         }
-        $identifier1 = isset($_POST["identifier-$i"]) ? htmlspecialchars($_POST["identifier-$i"]) : '';
-        $name1 = isset($_POST["name-$i"]) ? htmlspecialchars($_POST["name-$i"]) : '';
-        $inchikey1 = isset($_POST["inchikey-$i"]) ? htmlspecialchars($_POST["inchikey-$i"]) : '';
-        $inchi1 = isset($_POST["inchi-$i"]) ? htmlspecialchars($_POST["inchi-$i"]) : '';
-        $smiles1 = isset($_POST["smiles-$i"]) ? htmlspecialchars($_POST["smiles-$i"]) : '';
-        $url1 = isset($_POST["url-$i"]) ? htmlspecialchars($_POST["url-$i"]) : '';
-        $iupacname1 = isset($_POST["iupac-name-$i"]) ? htmlspecialchars($_POST["iupac-name-$i"]) : '';
-        $molecularformula1 = isset($_POST["molecular-formula-$i"]) ? htmlspecialchars($_POST["molecular-formula-$i"]) : '';
-        $molecularweight1 = isset($_POST["molecular-weight-$i"]) ? htmlspecialchars($_POST["molecular-weight-$i"]) : '';
-        $monoisotopicmolecularweight1 = isset($_POST["monoisotopic-molecular-weight-$i"]) ? htmlspecialchars($_POST["monoisotopic-molecular-weight-$i"]) : '';
-        $description1 = isset($_POST["description-$i"]) ? htmlspecialchars($_POST["description-$i"]) : '';
-        $disambiguatingdescription1 = isset($_POST["disambiguating-description-$i"]) ? htmlspecialchars($_POST["disambiguating-description-$i"]) : '';
-        $image1 = isset($_POST["image-$i"]) ? htmlspecialchars($_POST["image-$i"]) : '';
-        $alternatename1 = isset($_POST["alternate-name-$i"]) ? htmlspecialchars($_POST["alternate-name-$i"]) : '';
-        $sameas1 = isset($_POST["same-as-$i"]) ? htmlspecialchars($_POST["same-as-$i"]) : '';
+        $identifier1 = isset($_POST["identifier-$i"]) ? htmlspecialchars($_POST["identifier-$i"], ENT_NOQUOTES) : '';
+        $name1 = isset($_POST["name-$i"]) ? htmlspecialchars($_POST["name-$i"], ENT_NOQUOTES) : '';
+        $inchikey1 = isset($_POST["inchikey-$i"]) ? htmlspecialchars($_POST["inchikey-$i"], ENT_NOQUOTES) : '';
+        $inchi1 = isset($_POST["inchi-$i"]) ? htmlspecialchars($_POST["inchi-$i"], ENT_NOQUOTES) : '';
+        $smiles1 = isset($_POST["smiles-$i"]) ? htmlspecialchars($_POST["smiles-$i"], ENT_NOQUOTES) : '';
+        $url1 = isset($_POST["url-$i"]) ? htmlspecialchars($_POST["url-$i"], ENT_NOQUOTES) : '';
+        $url1_att = isset($_POST["url-$i"]) ? htmlspecialchars($_POST["url-$i"], ENT_QUOTES) : '';
+        $iupacname1 = isset($_POST["iupac-name-$i"]) ? htmlspecialchars($_POST["iupac-name-$i"], ENT_NOQUOTES) : '';
+        $molecularformula1 = isset($_POST["molecular-formula-$i"]) ? htmlspecialchars($_POST["molecular-formula-$i"], ENT_NOQUOTES) : '';
+        $molecularweight1 = isset($_POST["molecular-weight-$i"]) ? htmlspecialchars($_POST["molecular-weight-$i"], ENT_NOQUOTES) : '';
+        $monoisotopicmolecularweight1 = isset($_POST["monoisotopic-molecular-weight-$i"]) ? htmlspecialchars($_POST["monoisotopic-molecular-weight-$i"], ENT_NOQUOTES) : '';
+        $description1 = isset($_POST["description-$i"]) ? htmlspecialchars($_POST["description-$i"], ENT_NOQUOTES) : '';
+        $disambiguatingdescription1 = isset($_POST["disambiguating-description-$i"]) ? htmlspecialchars($_POST["disambiguating-description-$i"], ENT_NOQUOTES) : '';
+        $image1 = isset($_POST["image-$i"]) ? htmlspecialchars($_POST["image-$i"], ENT_QUOTES) : '';
+        $alternatename1 = isset($_POST["alternate-name-$i"]) ? htmlspecialchars($_POST["alternate-name-$i"], ENT_NOQUOTES) : '';
+        $sameas1 = isset($_POST["same-as-$i"]) ? htmlspecialchars($_POST["same-as-$i"], ENT_NOQUOTES) : '';
+        $sameas1_att = isset($_POST["same-as-$i"]) ? htmlspecialchars($_POST["same-as-$i"], ENT_QUOTES) : '';
 
-        $doc = $doc . "    <div itemscope itemtype='http://schema.org/MolecularEntity' itemid='$subject1'>";
+        $doc = $doc . "    <div itemscope itemtype=\"http://schema.org/MolecularEntity\" itemid=\"$subject1\">";
         if ($identifier1 != '') {
-            $doc = $doc . "\n      <div itemprop='identifier'>$identifier1</div>";
+            $doc = $doc . "\n      <div itemprop=\"identifier\">$identifier1</div>";
         }
         if ($name1 != '') {
-            $doc = $doc . "\n      <div itemprop='name'>$name1</div>";
+            $doc = $doc . "\n      <div itemprop=\"name\">$name1</div>";
         }
         if ($inchikey1 != '') {
-            $doc = $doc . "\n      <div itemprop='inChIKey'>$inchikey1</div>";
+            $doc = $doc . "\n      <div itemprop=\"inChIKey\">$inchikey1</div>";
         }
         if ($inchi1 != '') {
-            $doc = $doc . "\n      <div itemprop='inChI'>$inchi1</div>";
+            $doc = $doc . "\n      <div itemprop=\"inChI\">$inchi1</div>";
         }
         if ($smiles1 != '') {
-            $doc = $doc . "\n      <div itemprop='smiles'>$smiles1</div>";
+            $doc = $doc . "\n      <div itemprop=\"smiles\">$smiles1</div>";
         }
         if ($url1 != '') {
-            $doc = $doc . "\n      <a href='$url1' itemprop='url'>$url1</a>";
+            $doc = $doc . "\n      <a href=\"$url1_att\" itemprop=\"url\">$url1</a>";
         }
         if ($iupacname1 != '') {
-            $doc = $doc . "\n      <div itemprop='iupacName'>$iupacname1</div>";
+            $doc = $doc . "\n      <div itemprop=\"iupacName\">$iupacname1</div>";
         }
         if ($molecularformula1 != '') {
-            $doc = $doc . "\n      <div itemprop='molecularFormula'>$molecularformula1</div>";
+            $doc = $doc . "\n      <div itemprop=\"molecularFormula\">$molecularformula1</div>";
         }
         if ($molecularweight1 != '') {
-            $doc = $doc . "\n      <div itemprop='molecularWeight'>$molecularweight1</div>";
+            $doc = $doc . "\n      <div itemprop=\"molecularWeight\">$molecularweight1</div>";
         }
         if ($monoisotopicmolecularweight1 != '') {
-            $doc = $doc . "\n      <div itemprop='monoisotopicMolecularWeight'>$monoisotopicmolecularweight1</div>";
+            $doc = $doc . "\n      <div itemprop=\"monoisotopicMolecularWeight\">$monoisotopicmolecularweight1</div>";
         }
         if ($description1 != '') {
-            $doc = $doc . "\n      <div itemprop='description'>$description1</div>";
+            $doc = $doc . "\n      <div itemprop=\"description\">$description1</div>";
         }
         if ($disambiguatingdescription1 != '') {
-            $doc = $doc . "\n      <div itemprop='disambiguatingDescription'>$disambiguatingdescription1</div>";
+            $doc = $doc . "\n      <div itemprop=\"disambiguatingDescription\">$disambiguatingdescription1</div>";
         }
         if ($image1 != '') {
-            $doc = $doc . "\n      <img src='$image1' alt='Image of the Molecule$i' itemprop='image'>";
+            $doc = $doc . "\n      <img src=\"$image1\" alt=\"Image of the Molecule$i\" itemprop=\"image\">";
         }
         if ($alternatename1 != '') {
-            $doc = $doc . "\n      <div itemprop='alternateName'>$alternatename1</div>";
+            $doc = $doc . "\n      <div itemprop=\"alternateName\">$alternatename1</div>";
         }
         if ($sameas1 != '') {
-            $doc = $doc . "\n      <a href='$sameas1' itemprop='sameAs'>$sameas1</a>";
+            $doc = $doc . "\n      <a href=\"$sameas1_att\" itemprop=\"sameAs\">$sameas1</a>";
         }
 
         $doc = $doc . "\n    </div>\n";
     }
-    return $doc . "\n  </body>\n</html>";
+    return $doc . "  </body>\n</html>";
 }
 
 $format = $_POST['output-format'];
