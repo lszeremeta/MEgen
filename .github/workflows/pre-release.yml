@@ -78,7 +78,6 @@ jobs:
             - LICENSE
             - README.md
             - stack.yml
-          security: strict
 
   docker-hub:
     name: Docker Hub

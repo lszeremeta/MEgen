@@ -124,4 +124,3 @@ jobs:
             - LICENSE
             - README.md
             - stack.yml
-          security: strict
