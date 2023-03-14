@@ -110,7 +110,6 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME_RELEASE }}
           password: ${{ secrets.FTP_PASSWORD_RELEASE }}
-          protocol: ftps
           exclude: .git*
             - .git*/**
             - **/.git*/**

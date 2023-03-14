@@ -64,7 +64,6 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME_BETA }}
           password: ${{ secrets.FTP_PASSWORD_BETA }}
-          protocol: ftps
           exclude: .git*
             - .git*/**
             - **/.git*/**
