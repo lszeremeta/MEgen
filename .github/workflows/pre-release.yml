@@ -65,7 +65,6 @@ jobs:
           username: ${{ secrets.FTP_USERNAME_BETA }}
           password: ${{ secrets.FTP_PASSWORD_BETA }}
           protocol: ftps
-          security: strict
           exclude: |
             **/.git*
             **/.git*/**
