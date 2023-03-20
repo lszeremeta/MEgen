@@ -54,8 +54,6 @@ jobs:
     steps:
       - name: Get latest code
         uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
       - name: Wait for concurrent jobs
         uses: softprops/turnstyle@v1
         env:
@@ -66,9 +64,10 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME_BETA }}
           password: ${{ secrets.FTP_PASSWORD_BETA }}
-          exclude: .git*
-            - .git*/**
+          exclude: |
+            - **/.git*
             - **/.git*/**
+            - **/.github/**
             - .dockerignore
             - logo/raw-svg
             - logo/raw-svg/*
