@@ -110,16 +110,19 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME_RELEASE }}
           password: ${{ secrets.FTP_PASSWORD_RELEASE }}
-          exclude: .git*
-            - .git*/**
-            - **/.git*/**
-            - .dockerignore
-            - logo/raw-svg
-            - logo/raw-svg/*
-            - logo/megen.png
-            - Dockerfile
-            - tests
-            - tests/*
-            - LICENSE
-            - README.md
-            - stack.yml
+          protocol: ftps
+          security: strict
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/.github/**
+            .dockerignore
+            logo/raw-svg
+            logo/raw-svg/*
+            logo/megen.png
+            Dockerfile
+            tests
+            tests/*
+            LICENSE
+            README.md
+            stack.yml
