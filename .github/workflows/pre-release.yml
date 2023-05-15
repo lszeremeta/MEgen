@@ -19,7 +19,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Run JMeter Tests
-        uses: rbhadti94/apache-jmeter-action@v0.6.0
+        uses: rbhadti94/apache-jmeter-action@v0.7.0
         with:
           testFilePath: tests/all.jmx
           outputReportsFolder: reports/
