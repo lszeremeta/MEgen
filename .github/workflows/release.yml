@@ -23,7 +23,7 @@ jobs:
         with:
           testFilePath: tests/all.jmx
           outputReportsFolder: reports/
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: jmeter-test-results
           path: reports/
