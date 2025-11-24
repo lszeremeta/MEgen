@@ -17,7 +17,7 @@ jobs:
         volumes:
           - ${{ github.workspace }}:/var/www/html/
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - name: Run JMeter Tests
         uses: rbhadti94/apache-jmeter-action@v0.7.0
         with:
@@ -48,7 +48,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
       - name: Prepare
         id: prep
         run: |
@@ -99,7 +99,7 @@ jobs:
 
     steps:
       - name: Get latest code
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
       - name: Wait for concurrent jobs
         uses: softprops/turnstyle@v3
         env:
