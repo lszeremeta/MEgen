@@ -1,6 +1,6 @@
 # MEgen Dockerfile
 
-FROM php:8.0-apache
+FROM php:8.5-apache
 LABEL maintainer="Łukasz Szeremeta <l.szeremeta.dev+megen@gmail.com>"
 
 # Update server config
