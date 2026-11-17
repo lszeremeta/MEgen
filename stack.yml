@@ -1,9 +1,0 @@
-version: '3.8'
-
-services:
-
-  megen:
-    image: lszeremeta/megen
-    restart: always
-    ports:
-      - 4000:80

@@ -27,8 +27,6 @@ You can use the pre-built image on [Docker Hub](https://hub.docker.com/r/lszerem
 
 Then, you can use the app by reaching http://localhost:4000.
 
-[![Try in PWD](https://github.com/play-with-docker/stacks/raw/cff22438cb4195ace27f9b15784bbb497047afa7/assets/images/button.png)](https://labs.play-with-docker.com/?stack=https://raw.githubusercontent.com/lszeremeta/MEgen/master/stack.yml)
-
 #### Local Docker build
 
 Another option is to build the container yourself. You need to download the contents of the [MEgen repository](https://github.com/lszeremeta/MEgen) and then build and run the application. If you don't want or can't use git, you can [download the zip archive](https://github.com/lszeremeta/MEgen/archive/master.zip) and extract it, then execute the last two commands inside extracted code directory.
