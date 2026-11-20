@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     services:
       megen:
-        image: php:8.0-apache
+        image: php:8.5-apache
         ports:
           - 80:80
         volumes:
@@ -78,7 +78,6 @@ jobs:
             tests/*
             LICENSE
             README.md
-            stack.yml
 
   docker-hub:
     name: Docker Hub
@@ -98,7 +97,7 @@ jobs:
           DOCKER_IMAGE=lszeremeta/megen
           VERSION=latest
           TAGS="${DOCKER_IMAGE}:${VERSION}"
-          echo ::set-output name=tags::${TAGS}
+          echo "tags=${TAGS}" >> "$GITHUB_OUTPUT"
 
       - name: Set up Docker Buildx
         id: buildx
