@@ -9,6 +9,8 @@ jobs:
   test:
     name: jMeter tests
     runs-on: ubuntu-latest
+    env:
+      JMETER_VERSION: 5.6.3
     services:
       megen:
         image: php:8.5-apache
@@ -18,15 +20,35 @@ jobs:
           - ${{ github.workspace }}:/var/www/html/
     steps:
       - uses: actions/checkout@v7
-      - name: Run JMeter Tests
-        uses: rbhadti94/apache-jmeter-action@v0.7.0
+      - name: Cache JMeter
+        id: jmeter-cache
+        uses: actions/cache@v6
         with:
-          testFilePath: tests/all.jmx
-          outputReportsFolder: reports/
+          path: ~/jmeter
+          key: jmeter-${{ env.JMETER_VERSION }}
+      - name: Download JMeter
+        if: steps.jmeter-cache.outputs.cache-hit != 'true'
+        run: |
+          FILE="apache-jmeter-${JMETER_VERSION}.tgz"
+          curl -fsSL -o "/tmp/$FILE" "https://dlcdn.apache.org/jmeter/binaries/$FILE" \
+            || curl -fsSL -o "/tmp/$FILE" "https://archive.apache.org/dist/jmeter/binaries/$FILE"
+          mkdir -p ~/jmeter
+          tar -xzf "/tmp/$FILE" -C ~/jmeter --strip-components=1
+      - name: Run JMeter tests
+        run: |
+          echo "127.0.0.1 megen" | sudo tee -a /etc/hosts
+          curl -fsS --retry 10 --retry-connrefused --retry-delay 1 -o /dev/null http://megen/
+          export JAVA_HOME="$JAVA_HOME_17_X64" PATH="$JAVA_HOME_17_X64/bin:$PATH"
+          ~/jmeter/bin/jmeter -n -t tests/all.jmx -l jmeter_log.log -j jmeter.log -e -o reports/
+          jq -e '.Total.errorCount == 0' reports/statistics.json
+          if grep -E ' ERROR ' jmeter.log; then exit 1; fi
       - uses: actions/upload-artifact@v7
+        if: always()
         with:
           name: jmeter-test-results
-          path: reports/
+          path: |
+            reports/
+            jmeter.log
 
   pre-release:
     name: GitHub pre-release
