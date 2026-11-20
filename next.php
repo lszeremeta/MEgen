@@ -1,5 +1,5 @@
 <?php
-$count = isset($_GET['count']) ? $_GET['count'] : 2;
+$count = isset($_GET['count']) ? (int) $_GET['count'] : 2;
 ?>
 <div class="card container" id="m<?php echo $count; ?>">
     <div class="card-body molecular-entity">
